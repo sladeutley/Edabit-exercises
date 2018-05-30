@@ -24,6 +24,12 @@ function repeat(item, times) {
 //   return new Array (item.toString().concat(", ").repeat(times - 1) + item.toString());
 // }
 
+// THIS WAY DIDN't PASS EITHER
+function repeat(item, times) {
+  let string = item.toString().concat(" ").repeat(times - 1) + item.toString()
+  return new Array (string.split(" "));
+}
+
 console.log(repeat("edabit", 3));
 console.log(repeat(13, 5));
 
