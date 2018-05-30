@@ -1,35 +1,59 @@
-// EXERCISE 1
+// // EXERCISE 1
 
-// Repeat the Same Item Multiple Times
-// Create a function that takes two arguments (item, times). The first argument (item) is the item that needs repeating while the second argument (times) is the number of times the item is to be repeated. Return the result in an array.
-// Examples
-// "edabit", 3 ➞ ["edabit", "edabit", "edabit"]
+// // Repeat the Same Item Multiple Times
+// // Create a function that takes two arguments (item, times). The first argument (item) is the item that needs repeating while the second argument (times) is the number of times the item is to be repeated. Return the result in an array.
+// // Examples
+// // "edabit", 3 ➞ ["edabit", "edabit", "edabit"]
 
-// 13, 5 ➞ [13, 13, 13, 13, 13]
+// // 13, 5 ➞ [13, 13, 13, 13, 13]
 
-// "7", 2 ➞ ["7", "7"]
+// // "7", 2 ➞ ["7", "7"]
 
-// 0, 0 ➞ []
+// // 0, 0 ➞ []
 
-function repeat(item, times) {
-  let arr = [];
-  for (let i = 0; i < times; i++) {
-    arr.push(item);
-  }
-  return arr;
-}
-
-// TRIED THIS WAY BECAUSE IT SEEMED COO, BUT NOT PASSING ALL THE TESTS
 // function repeat(item, times) {
-//   return new Array (item.toString().concat(", ").repeat(times - 1) + item.toString());
+//   let arr = [];
+//   for (let i = 0; i < times; i++) {
+//     arr.push(item);
+//   }
+//   return arr;
 // }
 
-// THIS WAY DIDN't PASS EITHER
-function repeat(item, times) {
-  let string = item.toString().concat(" ").repeat(times - 1) + item.toString()
-  return new Array (string.split(" "));
+// // TRIED THIS WAY BECAUSE IT SEEMED COO, BUT NOT PASSING ALL THE TESTS
+// // function repeat(item, times) {
+// //   return new Array (item.toString().concat(", ").repeat(times - 1) + item.toString());
+// // }
+
+// // THIS WAY DIDN't PASS EITHER
+// // function repeat(item, times) {
+// //   let string = item.toString().concat(" ").repeat(times - 1) + item.toString()
+// //   return new Array (string.split(" "));
+// // }
+
+// console.log(repeat("edabit", 3));
+// console.log(repeat(13, 5));
+
+// Exercise 2
+
+// Is the Number Less than or Equal to Zero?
+// Create a function that takes a number as its only argument and returns true if it's less than or equal to zero, otherwise return false.
+// Examples
+// 5 ➞ false
+
+// 0 ➞ true
+
+// -2 ➞ true
+
+// 1 ➞ false
+
+function lessThanOrEqualToZero(num) {
+  if (num <= 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
-console.log(repeat("edabit", 3));
-console.log(repeat(13, 5));
-
+console.log(lessThanOrEqualToZero(8));
+console.log(lessThanOrEqualToZero(-8));
+console.log(lessThanOrEqualToZero(0));
