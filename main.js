@@ -33,27 +33,73 @@
 // console.log(repeat("edabit", 3));
 // console.log(repeat(13, 5));
 
-// Exercise 2
+// ********************************************************************************
 
-// Is the Number Less than or Equal to Zero?
-// Create a function that takes a number as its only argument and returns true if it's less than or equal to zero, otherwise return false.
+// // EXERCISE 2
+
+// // Is the Number Less than or Equal to Zero?
+// // Create a function that takes a number as its only argument and returns true if it's less than or equal to zero, otherwise return false.
+// // Examples
+// // 5 ➞ false
+
+// // 0 ➞ true
+
+// // -2 ➞ true
+
+// // 1 ➞ false
+
+// function lessThanOrEqualToZero(num) {
+//   if (num <= 0) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// console.log(lessThanOrEqualToZero(8));
+// console.log(lessThanOrEqualToZero(-8));
+// console.log(lessThanOrEqualToZero(0));
+
+// ********************************************************************************
+
+// // EXERCISE 3
+
+// // Is the Number Even or Odd?
+// // Create a function that takes a number as an argument and returns "even" for even numbers and "odd" for odd numbers.
+// // Examples
+// // 3 ➞ "odd"
+
+// // 146 ➞ "even"
+
+// // 19 ➞ "odd"
+
+// function isEvenOrOdd(num) {
+//   if (num % 2 === 0) {
+//     return "even";
+//   } else {
+//     return "odd";
+//   }
+// }
+
+// console.log(isEvenOrOdd(11));
+// console.log(isEvenOrOdd(12));
+// console.log(isEvenOrOdd(0));
+
+
+// ********************************************************************************
+
+
+// EXERCISE 4
+
+// Find the Smallest Number in an Array
+// Create a function that takes an array of numbers and returns the smallest number in the set.
 // Examples
-// 5 ➞ false
+// [34, 15, 88, 2] ➞ 2
 
-// 0 ➞ true
+// [34, -345, -1, 100] ➞ -345
 
-// -2 ➞ true
+// [-76, 1.345, 1, 0] ➞ -76
 
-// 1 ➞ false
+// [0.4356, 0.8795, 0.5435, -0.9999] ➞ -0.9999
 
-function lessThanOrEqualToZero(num) {
-  if (num <= 0) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-console.log(lessThanOrEqualToZero(8));
-console.log(lessThanOrEqualToZero(-8));
-console.log(lessThanOrEqualToZero(0));
+// [7, 7, 7] ➞ 7
