@@ -89,24 +89,63 @@
 // ********************************************************************************
 
 
-// EXERCISE 4
+// // EXERCISE 4
 
-// Find the Smallest Number in an Array
-// Create a function that takes an array of numbers and returns the smallest number in the set.
+// // Find the Smallest Number in an Array
+// // Create a function that takes an array of numbers and returns the smallest number in the set.
+// // Examples
+// // [34, 15, 88, 2] ➞ 2
+
+// // [34, -345, -1, 100] ➞ -345
+
+// // [-76, 1.345, 1, 0] ➞ -76
+
+// // [0.4356, 0.8795, 0.5435, -0.9999] ➞ -0.9999
+
+// // [7, 7, 7] ➞ 7
+
+// let findSmallestNumInArray = arr => {
+//   // return Math.min.apply(null, arr);
+//   return Math.min(...arr);
+// }
+
+// console.log(findSmallestNumInArray([5, -5, 0, 1, 9]));
+
+// ********************************************************************************
+
+// // EXERCISE 5
+
+// // Get Word Count
+// // Create a function that takes a string and returns the word count. The string will be a sentence.
+// // Examples
+// // "Just an example here move along" ➞ 6
+
+// // "This is a test" ➞ 4
+
+// // "What an easy task, right" ➞ 5
+
+
+// function countWords(str) {
+//   return str.split(" ").length;
+// }
+
+// console.log(countWords("You are awesome!"));
+
+// ********************************************************************************
+
+// EXERCISE 6
+
+// Shuffle the Name
+// Create a function that accepts a string (of a persons first and last name) and returns a string with the first and last name swapped.
 // Examples
-// [34, 15, 88, 2] ➞ 2
+// "Donald Trump" ➞ "Trump Donald"
 
-// [34, -345, -1, 100] ➞ -345
+// "Rosie O'Donnell" ➞ "O'Donnell Rosie"
 
-// [-76, 1.345, 1, 0] ➞ -76
+// "Seymour Butts" ➞ "Butts Seymour"
 
-// [0.4356, 0.8795, 0.5435, -0.9999] ➞ -0.9999
-
-// [7, 7, 7] ➞ 7
-
-let findSmallestNumInArray = arr => {
-  // return Math.min.apply(null, arr);
-  return Math.min(...arr);
+function nameShuffle(str) {
+	return str.split(" ").reverse().join(" ");
 }
 
-console.log(findSmallestNumInArray([5, -5, 0, 1, 9]));
+console.log(nameShuffle("Jeremy A Renner"));
