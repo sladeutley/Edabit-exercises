@@ -103,3 +103,10 @@
 // [0.4356, 0.8795, 0.5435, -0.9999] ➞ -0.9999
 
 // [7, 7, 7] ➞ 7
+
+let findSmallestNumInArray = arr => {
+  // return Math.min.apply(null, arr);
+  return Math.min(...arr);
+}
+
+console.log(findSmallestNumInArray([5, -5, 0, 1, 9]));
