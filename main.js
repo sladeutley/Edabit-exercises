@@ -197,40 +197,57 @@
 
 // ********************************************************************************
 
-// EXERCISE 8
+// // EXERCISE 8
 
-// Check if String Ending Matches Second String
-// Create a function that takes two strings and returns true if the first argument ends with the second argument; otherewise return false .
-// Rules
-// Take two strings as arguments.
-// Determine if second string matches ending of first string.
-// Return boolean value.
+// // Check if String Ending Matches Second String
+// // Create a function that takes two strings and returns true if the first argument ends with the second argument; otherewise return false .
+// // Rules
+// // Take two strings as arguments.
+// // Determine if second string matches ending of first string.
+// // Return boolean value.
 
-// *****SOLUTION******
+// // *****SOLUTION******
 
-function checkEnding(str1, str2) {
-  let lastLettersOfStr1 = str1
-    .split("")
-    .slice(str1.length - str2.length)
-    .join("");
-  if (lastLettersOfStr1 === str2) {
-    return true;
-  } else return false;
-}
+// function checkEnding(str1, str2) {
+//   let lastLettersOfStr1 = str1
+//     .split("")
+//     .slice(str1.length - str2.length)
+//     .join("");
+//   if (lastLettersOfStr1 === str2) {
+//     return true;
+//   } else return false;
+// }
 
-console.log(checkEnding("feminine", "nine"));
-console.log(checkEnding("convention", "tio"));
-console.log(checkEnding("abc", "C"));
+// console.log(checkEnding("feminine", "nine"));
+// console.log(checkEnding("convention", "tio"));
+// console.log(checkEnding("abc", "C"));
 
-// //  OTHER SOLUTION I LIKED
-function checkEnding(str1, str2) {
-  return str1.endsWith(str2);
-}
+// // // //  OTHER SOLUTION I LIKED
+// // function checkEnding(str1, str2) {
+// //   return str1.endsWith(str2);
+// // }
 
-// OR JUST SLICE THE STRING
-function checkEnding(str1, str2) { 
-  return str1.slice(-(str2.length)) === str2;
-}
+// // // OR JUST SLICE THE STRING
+// // function checkEnding(str1, str2) { 
+// //   return str1.slice(-(str2.length)) === str2;
+// // }
 
 
 // ********************************************************************************
+
+// EXERCISE 9
+
+// Alphabet Soup
+// Create a function that takes a string and returns a string with its letters in alphabetical order.
+// Examples
+// "hello" ➞ "ehllo"
+
+// "edabit" ➞ "abdeit"
+
+// *****SOLUTION******
+
+function AlphabetSoup(str) {
+	return str.split("").sort().join("")
+}
+
+console.log(AlphabetSoup("hello"));
