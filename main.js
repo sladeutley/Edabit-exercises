@@ -133,19 +133,60 @@
 
 // ********************************************************************************
 
-// EXERCISE 6
+// // EXERCISE 6
 
-// Shuffle the Name
-// Create a function that accepts a string (of a persons first and last name) and returns a string with the first and last name swapped.
-// Examples
-// "Donald Trump" ➞ "Trump Donald"
+// // Shuffle the Name
+// // Create a function that accepts a string (of a persons first and last name) and returns a string with the first and last name swapped.
+// // Examples
+// // "Donald Trump" ➞ "Trump Donald"
 
-// "Rosie O'Donnell" ➞ "O'Donnell Rosie"
+// // "Rosie O'Donnell" ➞ "O'Donnell Rosie"
 
-// "Seymour Butts" ➞ "Butts Seymour"
+// // "Seymour Butts" ➞ "Butts Seymour"
 
-function nameShuffle(str) {
-	return str.split(" ").reverse().join(" ");
-}
+// function nameShuffle(str) {
+// 	return str.split(" ").reverse().join(" ");
+// }
 
-console.log(nameShuffle("Jeremy A Renner"));
+// console.log(nameShuffle("Jeremy A Renner"));
+
+// ********************************************************************************
+
+// // EXERCISE 7
+
+// // Flip the Boolean
+// // Create a function that reverses a boolean value and returns the string "boolean expected" if another variable type is given.
+// // Examples
+// // true ➞ false
+
+// // false ➞ true
+
+// // 0 ➞ "boolean expected"
+
+// // null ➞ "boolean expected"
+
+// function reverse(bool) {
+// 	if (bool === true) {
+//     return false;
+//   } else if (bool === false) {
+//     return true;
+//   } else return "boolean expected";
+// }
+
+// console.log(reverse(true))
+// console.log(reverse(false))
+// console.log(reverse(0))
+
+// // SOLUTION I LIKED
+
+// // function reverse(bool) {
+// // 	if (typeof bool !== 'boolean') return "boolean expected"
+// //   return !bool
+// // }
+
+
+// ********************************************************************************
+
+EXERCISE 8
+
+// ********************************************************************************
