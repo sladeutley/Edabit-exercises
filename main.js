@@ -11,6 +11,8 @@
 
 // // 0, 0 ➞ []
 
+// *****SOLUTION******
+
 // function repeat(item, times) {
 //   let arr = [];
 //   for (let i = 0; i < times; i++) {
@@ -48,6 +50,8 @@
 
 // // 1 ➞ false
 
+// *****SOLUTION******
+
 // function lessThanOrEqualToZero(num) {
 //   if (num <= 0) {
 //     return true;
@@ -73,6 +77,8 @@
 
 // // 19 ➞ "odd"
 
+// *****SOLUTION******
+
 // function isEvenOrOdd(num) {
 //   if (num % 2 === 0) {
 //     return "even";
@@ -85,9 +91,7 @@
 // console.log(isEvenOrOdd(12));
 // console.log(isEvenOrOdd(0));
 
-
 // ********************************************************************************
-
 
 // // EXERCISE 4
 
@@ -103,6 +107,8 @@
 // // [0.4356, 0.8795, 0.5435, -0.9999] ➞ -0.9999
 
 // // [7, 7, 7] ➞ 7
+
+// *****SOLUTION******
 
 // let findSmallestNumInArray = arr => {
 //   // return Math.min.apply(null, arr);
@@ -124,6 +130,7 @@
 
 // // "What an easy task, right" ➞ 5
 
+// *****SOLUTION******
 
 // function countWords(str) {
 //   return str.split(" ").length;
@@ -143,6 +150,8 @@
 // // "Rosie O'Donnell" ➞ "O'Donnell Rosie"
 
 // // "Seymour Butts" ➞ "Butts Seymour"
+
+// *****SOLUTION******
 
 // function nameShuffle(str) {
 // 	return str.split(" ").reverse().join(" ");
@@ -165,6 +174,8 @@
 
 // // null ➞ "boolean expected"
 
+// *****SOLUTION******
+
 // function reverse(bool) {
 // 	if (bool === true) {
 //     return false;
@@ -177,16 +188,49 @@
 // console.log(reverse(false))
 // console.log(reverse(0))
 
-// // SOLUTION I LIKED
+// //  OTHER SOLUTION I LIKED
 
 // // function reverse(bool) {
 // // 	if (typeof bool !== 'boolean') return "boolean expected"
 // //   return !bool
 // // }
 
-
 // ********************************************************************************
 
-EXERCISE 8
+// EXERCISE 8
+
+// Check if String Ending Matches Second String
+// Create a function that takes two strings and returns true if the first argument ends with the second argument; otherewise return false .
+// Rules
+// Take two strings as arguments.
+// Determine if second string matches ending of first string.
+// Return boolean value.
+
+// *****SOLUTION******
+
+function checkEnding(str1, str2) {
+  let lastLettersOfStr1 = str1
+    .split("")
+    .slice(str1.length - str2.length)
+    .join("");
+  if (lastLettersOfStr1 === str2) {
+    return true;
+  } else return false;
+}
+
+console.log(checkEnding("feminine", "nine"));
+console.log(checkEnding("convention", "tio"));
+console.log(checkEnding("abc", "C"));
+
+// //  OTHER SOLUTION I LIKED
+function checkEnding(str1, str2) {
+  return str1.endsWith(str2);
+}
+
+// OR JUST SLICE THE STRING
+function checkEnding(str1, str2) { 
+  return str1.slice(-(str2.length)) === str2;
+}
+
 
 // ********************************************************************************
