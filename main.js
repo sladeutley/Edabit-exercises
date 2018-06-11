@@ -275,7 +275,7 @@
 // //   return minMaxArr;
 // // }
 
-// // OR 
+// // OR
 
 // function minMax(arr) {
 //   return [Math.min(...arr), Math.max(...arr)];
@@ -310,19 +310,49 @@
 
 // EXERCISE 12
 
-// Is it Time for Milk and Cookies?
-// Christmas Eve is almost upon us, so naturally we need to prepare some milk and cookies for Santa! Create a function that accepts a Date object and returns true if it's Christmas Eve (December 24th) and false otherwise. Keep in mind JavaScript's Date month is 0 based, meaning December is the 11th month while January is 0.
+// // Is it Time for Milk and Cookies?
+// // Christmas Eve is almost upon us, so naturally we need to prepare some milk and cookies for Santa! Create a function that accepts a Date object and returns true if it's Christmas Eve (December 24th) and false otherwise. Keep in mind JavaScript's Date month is 0 based, meaning December is the 11th month while January is 0.
+// // Examples
+// // Date( 2013, 11, 24 ) ➞ true
+
+// // Date( 2013, 0, 23 ) ➞ false
+
+// // Date( 3000, 11, 24 ) ➞ true
+
+// // // *****SOLUTION******
+
+// function timeForMilkAndCookies(date) {
+// 	return date.getMonth() === 11 && date.getDate() === 24;
+// }
+
+// console.log(timeForMilkAndCookies(2013, 11, 24))
+
+// ********************************************************************************
+
+// EXERCISE 13
+
+// Add up the Numbers from a Single Number
+// Create a function that takes a number as an argument. Add up all the numbers from 1 to the number you passed to the function. For example, if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10.
 // Examples
-// Date( 2013, 11, 24 ) ➞ true
+// 4 ➞ 10
 
-// Date( 2013, 0, 23 ) ➞ false
+// 13 ➞ 91
 
-// Date( 3000, 11, 24 ) ➞ true
+// 600 ➞ 180300
 
 // // *****SOLUTION******
 
-function timeForMilkAndCookies(date) {
-	return date.getMonth() === 11 && date.getDate() === 24;
+function addUp(num) {
+  let result = 0;
+  for (let i = 0; i <= num; i++) {
+    result += i;
+  }
+  return result;
 }
 
-console.log(timeForMilkAndCookies(2013, 11, 24))
+console.log(addUp(4));
+
+// ********************************************************************************
+
+
+
