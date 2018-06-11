@@ -228,26 +228,80 @@
 // // }
 
 // // // OR JUST SLICE THE STRING
-// // function checkEnding(str1, str2) { 
+// // function checkEnding(str1, str2) {
 // //   return str1.slice(-(str2.length)) === str2;
 // // }
 
+// ********************************************************************************
+
+// // EXERCISE 9
+
+// // Alphabet Soup
+// // Create a function that takes a string and returns a string with its letters in alphabetical order.
+// // Examples
+// // "hello" ➞ "ehllo"
+
+// // "edabit" ➞ "abdeit"
+
+// // *****SOLUTION******
+
+// function AlphabetSoup(str) {
+// 	return str.split("").sort().join("");
+// }
+
+// console.log(AlphabetSoup("hello"));
 
 // ********************************************************************************
 
-// EXERCISE 9
+// // EXERCISE 10
 
-// Alphabet Soup
-// Create a function that takes a string and returns a string with its letters in alphabetical order.
+// // Find the Smallest and Biggest Numbers
+// // Create a function that takes an array of numbers and return both the minimum and maximum numbers, in that order.
+// // Examples
+// // [1, 2, 3, 4, 5] ➞ [1, 5]
+
+// // [2334454, 5] ➞ [5, 2334454]
+
+// // [1] ➞ [1, 1]
+// // Notes
+// // All test arrays will have at least one element and are valid.
+
+// // // *****SOLUTION******
+
+// // function minMax(arr) {
+// //   let minMaxArr = [];
+// //   minMaxArr.push(Math.min(...arr));
+// //   minMaxArr.push(Math.max(...arr));
+// //   return minMaxArr;
+// // }
+
+// // OR 
+
+// function minMax(arr) {
+//   return [Math.min(...arr), Math.max(...arr)];
+// }
+
+// console.log(minMax([1, 2, 3, 4, 5]));
+
+// ********************************************************************************
+
+// EXERCISE 11
+
+// Filter out Strings from an Array
+// Create a function that takes an array of positive numbers and strings and returns a new array without the strings. In other words, remove all strings from an array of elements.
+// Filter out all strings.
+// Return only numbers.
 // Examples
-// "hello" ➞ "ehllo"
+// [1, 2, "a", "b"] ➞ [1, 2]
 
-// "edabit" ➞ "abdeit"
+// [1, "a", "b", 0, 15] ➞ [1, 0, 15]
 
-// *****SOLUTION******
+// [1, 2, "aasf", "1", "123", 123] ➞ [1, 2, 123]
 
-function AlphabetSoup(str) {
-	return str.split("").sort().join("")
+// // *****SOLUTION******
+
+function filterArray(arr) {
+  return arr.filter(el => typeof el === 'number');
 }
 
-console.log(AlphabetSoup("hello"));
+console.log(filterArray([1, 2, "a", "b"]));
