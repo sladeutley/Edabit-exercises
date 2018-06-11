@@ -522,31 +522,54 @@
 
 // ********************************************************************************
 
-// EXERCISE 21
+// // EXERCISE 21
 
-// Remove Every Vowel from a String
-// Create a function that takes a string and returns a new string with all vowels removed.
+// // Remove Every Vowel from a String
+// // Create a function that takes a string and returns a new string with all vowels removed.
+// // Examples
+// // "I have never seen a thin person drinking Diet Coke." ➞ " hv nvr sn  thn prsn drnkng Dt Ck.")
+
+// // "We're gonna build a wall!" ➞ "W'r gnn bld  wll!"
+
+// // "Happy Thanksgiving to all--even the haters and losers!" ➞ "Hppy Thnksgvng t ll--vn th htrs nd lsrs!"
+// // Notes
+// // "y" is not considered a vowel.
+// // Expect a valid string for all test cases.
+
+// // *********SOLUTION*************
+
+// function silenceTrump(str) {
+//   return str.replace(/[aeiouAEIOU]/g, "");
+// }
+
+// // OR
+
+// // function silenceTrump(str) {
+// //   return str.replace(/[aeiou]/gi, "");
+// // }
+
+// console.log(silenceTrump("We're gonna build a wall!"));
+
+// ********************************************************************************
+
+// EXERCISE 22
+
+// Find the Largest Numbers in a Group of Arrays
+// Create a function that takes an array of arrays with numbers. Return a new (single) array with the largest numbers of each.
 // Examples
-// "I have never seen a thin person drinking Diet Coke." ➞ " hv nvr sn  thn prsn drnkng Dt Ck.")
+// [[4, 2, 7, 1], [20, 70, 40, 90], [1, 2, 0]] ➞ [7, 90, 2]
 
-// "We're gonna build a wall!" ➞ "W'r gnn bld  wll!"
+// [[-34, -54, -74], [-32, -2, -65], [-54, 7, -43]] ➞ [-34, -2, 7]
 
-// "Happy Thanksgiving to all--even the haters and losers!" ➞ "Hppy Thnksgvng t ll--vn th htrs nd lsrs!"
+// [[0.4321, 0.7634, 0.652], [1.324, 9.32, 2.5423, 6.4314], [9, 3, 6, 3]] ➞ [0.7634, 9.32, 9]
 // Notes
-// "y" is not considered a vowel.
-// Expect a valid string for all test cases.
+// Watch out for negative integers (numbers).
 
 // *********SOLUTION*************
 
-function silenceTrump(str) {
-  return str.replace(/[aeiouAEIOU]/g, "");
+function findLargestNums(arr) {
+  return arr.map(numbers => Math.max(...numbers));
 }
 
-// OR
-
-// function silenceTrump(str) {
-//   return str.replace(/[aeiou]/gi, "");
-// }
-
-console.log(silenceTrump("We're gonna build a wall!"));
+console.log(findLargestNums([[-34, -54, -74], [-32, -2, -65], [-54, 7, -43]]));
 // ********************************************************************************
