@@ -453,23 +453,47 @@
 // console.log(verifySubstrs("Centipede", "Cent", "tip", "pede"));
 // ********************************************************************************
 
-// EXERCISE 18
+// // EXERCISE 18
 
-// Pi to N Decimal Places
-// Given a number n, write a function that returns PI to n decimal places.
+// // Pi to N Decimal Places
+// // Given a number n, write a function that returns PI to n decimal places.
+// // Examples
+// // 5 ➞ 3.14159
+
+// // 4 ➞ 3.1416
+
+// // 15 ➞ 3.141592653589793
+// // Notes
+// // n will not be above 15, to keep this challenge simple.
+// // Round up the last digit if the next digit in PI is greater or equal to 5 (see second example above).
+// // The return value must be a number, not a string.
+
+// // // *********SOLUTION*************
+
+// function myPi(n) {
+// 	return +(Math.PI).toFixed(n)
+// }
+
+// ********************************************************************************
+
+// EXERCISE 19
+
+// Return the Four Letter Strings
+// Create a function that takes an array of strings. Return all words in the array that are exactly four letters.
 // Examples
-// 5 ➞ 3.14159
+// ["Ryan", "Kieran", "Jason", "Matt"] ➞ ["Ryan", "Matt"]
 
-// 4 ➞ 3.1416
+// ["Tomato", "Potato", "Pair"] ➞ ["Pair"]
 
-// 15 ➞ 3.141592653589793
+// ["Kangaroo", "Bear", "Fox"] ➞ ["Bear"]
 // Notes
-// n will not be above 15, to keep this challenge simple.
-// Round up the last digit if the next digit in PI is greater or equal to 5 (see second example above).
-// The return value must be a number, not a string.
+// You can expect valid strings for all test cases.
 
-// // *********SOLUTION*************
+// *********SOLUTION*************
 
-function myPi(n) {
-	return +(Math.PI).toFixed(n)
+function isFourLetters(arr) {
+	return arr.filter(word => word.length === 4)
 }
+
+console.log(isFourLetters(["Tomato", "Potato", "Pair"]))
+// ********************************************************************************
