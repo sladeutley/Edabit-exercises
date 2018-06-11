@@ -329,30 +329,54 @@
 
 // ********************************************************************************
 
-// EXERCISE 13
+// // EXERCISE 13
 
-// Add up the Numbers from a Single Number
-// Create a function that takes a number as an argument. Add up all the numbers from 1 to the number you passed to the function. For example, if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10.
-// Examples
-// 4 ➞ 10
+// // Add up the Numbers from a Single Number
+// // Create a function that takes a number as an argument. Add up all the numbers from 1 to the number you passed to the function. For example, if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10.
+// // Examples
+// // 4 ➞ 10
 
-// 13 ➞ 91
+// // 13 ➞ 91
 
-// 600 ➞ 180300
+// // 600 ➞ 180300
 
-// // *****SOLUTION******
+// // // *****SOLUTION******
 
-function addUp(num) {
-  let result = 0;
-  for (let i = 0; i <= num; i++) {
-    result += i;
-  }
-  return result;
-}
+// function addUp(num) {
+//   let result = 0;
+//   for (let i = 0; i <= num; i++) {
+//     result += i;
+//   }
+//   return result;
+// }
 
-console.log(addUp(4));
+// console.log(addUp(4));
 
 // ********************************************************************************
 
+// EXERCISE 14
 
+// How Many Vowels?
+// Create a function that takes a string and returns the number (count) of vowels contained within it.
+// Examples
+// "Celebration" ➞ 5
 
+// "Palm" ➞ 1
+
+// "Prediction" ➞ 4
+
+// *********SOLUTION*************
+
+function countVowels(str) {
+  count = 0;
+  str.toLowerCase().split("").forEach(letter => {
+    if (letter === "a" || letter === "e" || letter === "i" || letter === "o" || letter === "u") {
+      count++;
+    }
+  })
+  return count;
+}
+
+console.log(countVowels("Celebration"));
+
+// ********************************************************************************
