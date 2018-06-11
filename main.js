@@ -476,24 +476,49 @@
 
 // ********************************************************************************
 
-// EXERCISE 19
+// // EXERCISE 19
 
-// Return the Four Letter Strings
-// Create a function that takes an array of strings. Return all words in the array that are exactly four letters.
+// // Return the Four Letter Strings
+// // Create a function that takes an array of strings. Return all words in the array that are exactly four letters.
+// // Examples
+// // ["Ryan", "Kieran", "Jason", "Matt"] ➞ ["Ryan", "Matt"]
+
+// // ["Tomato", "Potato", "Pair"] ➞ ["Pair"]
+
+// // ["Kangaroo", "Bear", "Fox"] ➞ ["Bear"]
+// // Notes
+// // You can expect valid strings for all test cases.
+
+// // *********SOLUTION*************
+
+// function isFourLetters(arr) {
+// 	return arr.filter(word => word.length === 4)
+// }
+
+// console.log(isFourLetters(["Tomato", "Potato", "Pair"]))
+
+// ********************************************************************************
+
+// EXERCISE 20
+
+// Absolutely Sum
+// Take an array of integers (positive or negative or both) and return the sum of the absolute value of each element.
 // Examples
-// ["Ryan", "Kieran", "Jason", "Matt"] ➞ ["Ryan", "Matt"]
+// [2, -1, 4, 8, 10] ➞ 25
 
-// ["Tomato", "Potato", "Pair"] ➞ ["Pair"]
+// [-3, -4, -10, -2, -3] ➞ 22
 
-// ["Kangaroo", "Bear", "Fox"] ➞ ["Bear"]
-// Notes
-// You can expect valid strings for all test cases.
+// [2, 4, 6, 8, 10] ➞ 30
+
+// [-1] ➞ 1
 
 // *********SOLUTION*************
 
-function isFourLetters(arr) {
-	return arr.filter(word => word.length === 4)
+function getAbsSum(arr) {
+  return arr.map(num => Math.abs(num)).reduce((a,b) => a + b)
 }
 
-console.log(isFourLetters(["Tomato", "Potato", "Pair"]))
+console.log(getAbsSum([2, -1, 4, 8, 10]))
+
 // ********************************************************************************
+
