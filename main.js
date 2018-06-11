@@ -381,23 +381,44 @@
 
 // ********************************************************************************
 
-// EXERCISE 15
+// // EXERCISE 15
 
-// Repeating Letters
-// Create a function that takes a string and returns a string in which each character is repeated once.
+// // Repeating Letters
+// // Create a function that takes a string and returns a string in which each character is repeated once.
+// // Examples
+// // "String" ➞ "SSttrriinngg"
+
+// // "Hello World!" ➞ "HHeelllloo  WWoorrlldd!!"
+
+// // "1234!_ " ➞ "11223344!!__  "
+
+// // *********SOLUTION*************
+
+// function doubleChar(str) {
+// 	return str.split("").map(letter => letter + letter).join("");
+// }
+
+// console.log(doubleChar("String"));
+
+// ********************************************************************************
+
+// EXERCISE 16
+
+// Eliminate Odd Numbers within an Array
+// Create a function that takes an array of numbers and returns only the even values.
 // Examples
-// "String" ➞ "SSttrriinngg"
+// [1, 2, 3, 4, 5, 6, 7, 8] ➞ [2, 4, 6, 8]
 
-// "Hello World!" ➞ "HHeelllloo  WWoorrlldd!!"
+// [43, 65, 23, 89, 53, 9, 6] ➞ [6]
 
-// "1234!_ " ➞ "11223344!!__  "
+// [718, 991, 449, 644, 380, 440] ➞ [718, 644, 380, 440]
 
 // *********SOLUTION*************
 
-function doubleChar(str) {
-	return str.split("").map(letter => letter + letter).join("");
+function noOdds(arr) {
+	return arr.filter(num => num % 2 === 0);
 }
 
-console.log(doubleChar("String"));
+console.log(noOdds([43, 65, 23, 89, 53, 9, 6]))
 
 // ********************************************************************************
