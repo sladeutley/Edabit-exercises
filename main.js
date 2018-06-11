@@ -499,26 +499,54 @@
 
 // ********************************************************************************
 
-// EXERCISE 20
+// // EXERCISE 20
 
-// Absolutely Sum
-// Take an array of integers (positive or negative or both) and return the sum of the absolute value of each element.
-// Examples
-// [2, -1, 4, 8, 10] ➞ 25
+// // Absolutely Sum
+// // Take an array of integers (positive or negative or both) and return the sum of the absolute value of each element.
+// // Examples
+// // [2, -1, 4, 8, 10] ➞ 25
 
-// [-3, -4, -10, -2, -3] ➞ 22
+// // [-3, -4, -10, -2, -3] ➞ 22
 
-// [2, 4, 6, 8, 10] ➞ 30
+// // [2, 4, 6, 8, 10] ➞ 30
 
-// [-1] ➞ 1
+// // [-1] ➞ 1
 
-// *********SOLUTION*************
+// // *********SOLUTION*************
 
-function getAbsSum(arr) {
-  return arr.map(num => Math.abs(num)).reduce((a,b) => a + b)
-}
+// function getAbsSum(arr) {
+//   return arr.map(num => Math.abs(num)).reduce((a,b) => a + b)
+// }
 
-console.log(getAbsSum([2, -1, 4, 8, 10]))
+// console.log(getAbsSum([2, -1, 4, 8, 10]))
 
 // ********************************************************************************
 
+// EXERCISE 21
+
+// Remove Every Vowel from a String
+// Create a function that takes a string and returns a new string with all vowels removed.
+// Examples
+// "I have never seen a thin person drinking Diet Coke." ➞ " hv nvr sn  thn prsn drnkng Dt Ck.")
+
+// "We're gonna build a wall!" ➞ "W'r gnn bld  wll!"
+
+// "Happy Thanksgiving to all--even the haters and losers!" ➞ "Hppy Thnksgvng t ll--vn th htrs nd lsrs!"
+// Notes
+// "y" is not considered a vowel.
+// Expect a valid string for all test cases.
+
+// *********SOLUTION*************
+
+function silenceTrump(str) {
+  return str.replace(/[aeiouAEIOU]/g, "");
+}
+
+// OR
+
+// function silenceTrump(str) {
+//   return str.replace(/[aeiou]/gi, "");
+// }
+
+console.log(silenceTrump("We're gonna build a wall!"));
+// ********************************************************************************
