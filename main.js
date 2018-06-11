@@ -285,23 +285,44 @@
 
 // ********************************************************************************
 
-// EXERCISE 11
+// // EXERCISE 11
 
-// Filter out Strings from an Array
-// Create a function that takes an array of positive numbers and strings and returns a new array without the strings. In other words, remove all strings from an array of elements.
-// Filter out all strings.
-// Return only numbers.
+// // Filter out Strings from an Array
+// // Create a function that takes an array of positive numbers and strings and returns a new array without the strings. In other words, remove all strings from an array of elements.
+// // Filter out all strings.
+// // Return only numbers.
+// // Examples
+// // [1, 2, "a", "b"] ➞ [1, 2]
+
+// // [1, "a", "b", 0, 15] ➞ [1, 0, 15]
+
+// // [1, 2, "aasf", "1", "123", 123] ➞ [1, 2, 123]
+
+// // // *****SOLUTION******
+
+// function filterArray(arr) {
+//   return arr.filter(el => typeof el === 'number');
+// }
+
+// console.log(filterArray([1, 2, "a", "b"]));
+
+// ********************************************************************************
+
+// EXERCISE 12
+
+// Is it Time for Milk and Cookies?
+// Christmas Eve is almost upon us, so naturally we need to prepare some milk and cookies for Santa! Create a function that accepts a Date object and returns true if it's Christmas Eve (December 24th) and false otherwise. Keep in mind JavaScript's Date month is 0 based, meaning December is the 11th month while January is 0.
 // Examples
-// [1, 2, "a", "b"] ➞ [1, 2]
+// Date( 2013, 11, 24 ) ➞ true
 
-// [1, "a", "b", 0, 15] ➞ [1, 0, 15]
+// Date( 2013, 0, 23 ) ➞ false
 
-// [1, 2, "aasf", "1", "123", 123] ➞ [1, 2, 123]
+// Date( 3000, 11, 24 ) ➞ true
 
 // // *****SOLUTION******
 
-function filterArray(arr) {
-  return arr.filter(el => typeof el === 'number');
+function timeForMilkAndCookies(date) {
+	return date.getMonth() === 11 && date.getDate() === 24;
 }
 
-console.log(filterArray([1, 2, "a", "b"]));
+console.log(timeForMilkAndCookies(2013, 11, 24))
