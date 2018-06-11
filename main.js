@@ -367,16 +367,37 @@
 
 // *********SOLUTION*************
 
-function countVowels(str) {
-  count = 0;
-  str.toLowerCase().split("").forEach(letter => {
-    if (letter === "a" || letter === "e" || letter === "i" || letter === "o" || letter === "u") {
-      count++;
-    }
-  })
-  return count;
+// function countVowels(str) {
+//   count = 0;
+//   str.toLowerCase().split("").forEach(letter => {
+//     if (letter === "a" || letter === "e" || letter === "i" || letter === "o" || letter === "u") {
+//       count++;
+//     }
+//   })
+//   return count;
+// }
+
+// console.log(countVowels("Celebration"));
+
+// ********************************************************************************
+
+// EXERCISE 15
+
+// Repeating Letters
+// Create a function that takes a string and returns a string in which each character is repeated once.
+// Examples
+// "String" ➞ "SSttrriinngg"
+
+// "Hello World!" ➞ "HHeelllloo  WWoorrlldd!!"
+
+// "1234!_ " ➞ "11223344!!__  "
+
+// *********SOLUTION*************
+
+function doubleChar(str) {
+	return str.split("").map(letter => letter + letter).join("");
 }
 
-console.log(countVowels("Celebration"));
+console.log(doubleChar("String"));
 
 // ********************************************************************************
