@@ -402,23 +402,53 @@
 
 // ********************************************************************************
 
-// EXERCISE 16
+// // EXERCISE 16
 
-// Eliminate Odd Numbers within an Array
-// Create a function that takes an array of numbers and returns only the even values.
+// // Eliminate Odd Numbers within an Array
+// // Create a function that takes an array of numbers and returns only the even values.
+// // Examples
+// // [1, 2, 3, 4, 5, 6, 7, 8] ➞ [2, 4, 6, 8]
+
+// // [43, 65, 23, 89, 53, 9, 6] ➞ [6]
+
+// // [718, 991, 449, 644, 380, 440] ➞ [718, 644, 380, 440]
+
+// // *********SOLUTION*************
+
+// function noOdds(arr) {
+// 	return arr.filter(num => num % 2 === 0);
+// }
+
+// console.log(noOdds([43, 65, 23, 89, 53, 9, 6]))
+
+// ********************************************************************************
+
+// EXERCISE 17
+
+// Head-Body-Tail
+// Write a function that takes four string arguments. You will be comparing the first string to the three next strings. Verify if the first string starts with the second string, includes the third string, and ends with the fourth string. If the first string passes all checks, return the string "My head, body, and tail.", otherwise, return "Incomplete.".
 // Examples
-// [1, 2, 3, 4, 5, 6, 7, 8] ➞ [2, 4, 6, 8]
+// "Onomatopeia", "on", "mato", "ia" ➞ "Incomplete."
 
-// [43, 65, 23, 89, 53, 9, 6] ➞ [6]
+// "Centipede", "Cent", "tip", "pede" ➞ "My head, body, and tail."
 
-// [718, 991, 449, 644, 380, 440] ➞ [718, 644, 380, 440]
+// "apple", "AP", "PPL", "LE" ➞ "Incomplete."
+// Notes
+// You'll always get exactly four strings as arguments.
+// Tests are case sensitive.
 
 // *********SOLUTION*************
 
-function noOdds(arr) {
-	return arr.filter(num => num % 2 === 0);
+function verifySubstrs(mainStr, head, body, tail) {
+  if (
+    mainStr.startsWith(head) &&
+    mainStr.includes(body) &&
+    mainStr.endsWith(tail)
+  ) {
+    return "My head, body, and tail.";
+  } else return "Incomplete.";
 }
 
-console.log(noOdds([43, 65, 23, 89, 53, 9, 6]))
-
+console.log(verifySubstrs("Onomatopeia", "on", "mato", "ia"));
+console.log(verifySubstrs("Centipede", "Cent", "tip", "pede"));
 // ********************************************************************************
