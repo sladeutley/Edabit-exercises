@@ -575,53 +575,77 @@
 
 // ********************************************************************************
 
-// EXERCISE 23
+// // EXERCISE 23
 
-// Is the Number a Prime?
-// Create a function that returns true if a number is prime and false if it's not. A prime number is any positive integer that is evenly divisible by only two divisors: 1 and itself. The first ten prime numbers are 2, 3, 5, 7, 11, 13, 17, 19, 23 and 29.
-// Examples
-// 7 ➞ true
+// // Is the Number a Prime?
+// // Create a function that returns true if a number is prime and false if it's not. A prime number is any positive integer that is evenly divisible by only two divisors: 1 and itself. The first ten prime numbers are 2, 3, 5, 7, 11, 13, 17, 19, 23 and 29.
+// // Examples
+// // 7 ➞ true
 
-// 9 ➞ false
+// // 9 ➞ false
 
-// 10 ➞ false
-// Notes
-// 1 is not a prime number.
-// If a number is odd it is not divisible by an even number.
+// // 10 ➞ false
+// // Notes
+// // 1 is not a prime number.
+// // If a number is odd it is not divisible by an even number.
 
-// // *********SOLUTION*************
+// // // *********SOLUTION*************
 
-// ****OPTION 1*******
+// // ****OPTION 1*******
+
+// // function isPrime(num) {
+// //   if (num === 1) {
+// //     return false;
+// //   }
+// //   for (let i = 2; i < num; i++) {
+// //     if (num%i === 0) {
+// //       return false;
+// //     }
+// //   }
+// //   return true;
+// // }
+
+// // ****OPTION 2*******
 
 // function isPrime(num) {
-//   if (num === 1) {
-//     return false;
-//   }
 //   for (let i = 2; i < num; i++) {
 //     if (num%i === 0) {
+//       // AS SOON AS THIS IF STATEMENT IS TRUE, THE LOOP BREAKS AND RETURNS FALSE
 //       return false;
-//     }
+//     } 
 //   }
-//   return true;
+//     return num !== 1
 // }
 
-// ****OPTION 2*******
+// console.log(isPrime(7));
+// console.log(isPrime(9));
+// console.log(isPrime(29));
+// console.log(isPrime(102));
+// console.log(isPrime(1));
 
-function isPrime(num) {
-  for (let i = 2; i < num; i++) {
-    if (num%i === 0) {
-      // AS SOON AS THIS IF STATEMENT IS TRUE, THE LOOP BREAKS AND RETURNS FALSE
-      return false;
-    } 
-  }
-    return num !== 1
+// ********************************************************************************
+
+// EXERCISE 24
+
+// Calculate the Mean
+// Create a function that takes an array of numbers and returns the mean value.
+// Examples
+// [1, 0, 4, 5, 2, 4, 1, 2, 3, 3, 3] ➞ 2.54
+
+// [2, 3, 2, 3] ➞ 2.50
+
+// [3, 3, 3, 3, 3] ➞ 3.00
+// Notes
+// Round to two decimal places.
+// You can expect an integer ranging from 0 to 10000.
+
+// *********SOLUTION*************
+
+function mean(arr) {
+	return +(arr.reduce((a,b) => (a + b)) / arr.length).toFixed(2)
 }
 
-console.log(isPrime(7));
-console.log(isPrime(9));
-console.log(isPrime(29));
-console.log(isPrime(102));
-console.log(isPrime(1));
+console.log(mean([1, 0, 4, 5, 2, 4, 1, 2, 3, 3, 3]));
 
 // ********************************************************************************
 
