@@ -698,6 +698,35 @@
 
 // EXERCISE 25
 
+// Return the Middle Character(s) of a String
+// Create a function that takes a string and returns the middle character(s). If the word's length is odd, return the middle character. If the word's length is even, return the middle two characters.
+// Examples
+// "test" ➞ "es"
+
+// "testing" ➞ "t"
+
+// "middle" ➞ "dd"
+
+// "A" ➞ "A"
+// Notes
+// All test cases contain a single word (as a string).
+
 // *********SOLUTION*************
 
+function getMiddle(str) {
+  let strArray = str.split("")
+  if (strArray.length % 2 === 0) {
+    let slice1Index = (strArray.length / 2) - 1;
+    let slice2Index = (strArray.length / 2) + 1;
+    return strArray.slice(slice1Index, slice2Index).join("");
+  }
+  if (strArray.length % 2 !== 0) {
+    let sliceIndex = Math.floor(strArray.length / 2);
+    return strArray.slice(sliceIndex, sliceIndex + 1).join("");
+  }
+}
+
+console.log(getMiddle("test"));
+console.log(getMiddle("testing"));
+console.log(getMiddle("A"));
 // ********************************************************************************
