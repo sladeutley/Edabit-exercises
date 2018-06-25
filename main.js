@@ -552,24 +552,76 @@
 
 // ********************************************************************************
 
-// EXERCISE 22
+// // EXERCISE 22
 
-// Find the Largest Numbers in a Group of Arrays
-// Create a function that takes an array of arrays with numbers. Return a new (single) array with the largest numbers of each.
+// // Find the Largest Numbers in a Group of Arrays
+// // Create a function that takes an array of arrays with numbers. Return a new (single) array with the largest numbers of each.
+// // Examples
+// // [[4, 2, 7, 1], [20, 70, 40, 90], [1, 2, 0]] ➞ [7, 90, 2]
+
+// // [[-34, -54, -74], [-32, -2, -65], [-54, 7, -43]] ➞ [-34, -2, 7]
+
+// // [[0.4321, 0.7634, 0.652], [1.324, 9.32, 2.5423, 6.4314], [9, 3, 6, 3]] ➞ [0.7634, 9.32, 9]
+// // Notes
+// // Watch out for negative integers (numbers).
+
+// // *********SOLUTION*************
+
+// function findLargestNums(arr) {
+//   return arr.map(numbers => Math.max(...numbers));
+// }
+
+// console.log(findLargestNums([[-34, -54, -74], [-32, -2, -65], [-54, 7, -43]]));
+
+// ********************************************************************************
+
+// EXERCISE 23
+
+// Is the Number a Prime?
+// Create a function that returns true if a number is prime and false if it's not. A prime number is any positive integer that is evenly divisible by only two divisors: 1 and itself. The first ten prime numbers are 2, 3, 5, 7, 11, 13, 17, 19, 23 and 29.
 // Examples
-// [[4, 2, 7, 1], [20, 70, 40, 90], [1, 2, 0]] ➞ [7, 90, 2]
+// 7 ➞ true
 
-// [[-34, -54, -74], [-32, -2, -65], [-54, 7, -43]] ➞ [-34, -2, 7]
+// 9 ➞ false
 
-// [[0.4321, 0.7634, 0.652], [1.324, 9.32, 2.5423, 6.4314], [9, 3, 6, 3]] ➞ [0.7634, 9.32, 9]
+// 10 ➞ false
 // Notes
-// Watch out for negative integers (numbers).
+// 1 is not a prime number.
+// If a number is odd it is not divisible by an even number.
 
-// *********SOLUTION*************
+// // *********SOLUTION*************
 
-function findLargestNums(arr) {
-  return arr.map(numbers => Math.max(...numbers));
+// ****OPTION 1*******
+
+// function isPrime(num) {
+//   if (num === 1) {
+//     return false;
+//   }
+//   for (let i = 2; i < num; i++) {
+//     if (num%i === 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// ****OPTION 2*******
+
+function isPrime(num) {
+  for (let i = 2; i < num; i++) {
+    if (num%i === 0) {
+      // AS SOON AS THIS IF STATEMENT IS TRUE, THE LOOP BREAKS AND RETURNS FALSE
+      return false;
+    } 
+  }
+    return num !== 1
 }
 
-console.log(findLargestNums([[-34, -54, -74], [-32, -2, -65], [-54, 7, -43]]));
+console.log(isPrime(7));
+console.log(isPrime(9));
+console.log(isPrime(29));
+console.log(isPrime(102));
+console.log(isPrime(1));
+
 // ********************************************************************************
+
