@@ -625,27 +625,60 @@
 
 // ********************************************************************************
 
-// EXERCISE 24
+// // EXERCISE 24
 
-// Calculate the Mean
-// Create a function that takes an array of numbers and returns the mean value.
+// // Calculate the Mean
+// // Create a function that takes an array of numbers and returns the mean value.
+// // Examples
+// // [1, 0, 4, 5, 2, 4, 1, 2, 3, 3, 3] ➞ 2.54
+
+// // [2, 3, 2, 3] ➞ 2.50
+
+// // [3, 3, 3, 3, 3] ➞ 3.00
+// // Notes
+// // Round to two decimal places.
+// // You can expect an integer ranging from 0 to 10000.
+
+// // *********SOLUTION*************
+
+// function mean(arr) {
+// 	return +(arr.reduce((a,b) => (a + b)) / arr.length).toFixed(2)
+// }
+
+// console.log(mean([1, 0, 4, 5, 2, 4, 1, 2, 3, 3, 3]));
+
+// ********************************************************************************
+
+// EXERCISE 25
+
+// Equality of 3 Values
+// Write a function that takes three input values (a, b, c) and returns the number of equal values.
 // Examples
-// [1, 0, 4, 5, 2, 4, 1, 2, 3, 3, 3] ➞ 2.54
+// 3, 4, 3 ➞ 2
 
-// [2, 3, 2, 3] ➞ 2.50
+// 1, 1, 1 ➞ 3
 
-// [3, 3, 3, 3, 3] ➞ 3.00
+// 3, 4, 1 ➞ 0 
 // Notes
-// Round to two decimal places.
-// You can expect an integer ranging from 0 to 10000.
+// Your function must return 0, 2 or 3.
 
-// *********SOLUTION*************
+// // *********SOLUTION*************
 
-function mean(arr) {
-	return +(arr.reduce((a,b) => (a + b)) / arr.length).toFixed(2)
+function equal(a, b, c) {
+  let counter = 0;
+  if (a === b) counter++;
+  if (a === c) counter++;
+  if (b === a) counter++;
+  if (b === c) counter++;
+  if (c === a) counter++;
+  if (c === b) counter++;
+  if ((a === b) && (a === c) && (b === c)) {
+    return 3;
+  }  
+  return counter;
 }
 
-console.log(mean([1, 0, 4, 5, 2, 4, 1, 2, 3, 3, 3]));
-
+console.log(equal(3, 4, 3))
+console.log(equal(3, 3, 3))
 // ********************************************************************************
 
