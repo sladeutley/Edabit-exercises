@@ -649,36 +649,55 @@
 
 // ********************************************************************************
 
-// EXERCISE 25
+// // EXERCISE 25
 
-// Equality of 3 Values
-// Write a function that takes three input values (a, b, c) and returns the number of equal values.
-// Examples
-// 3, 4, 3 ➞ 2
+// // Equality of 3 Values
+// // Write a function that takes three input values (a, b, c) and returns the number of equal values.
+// // Examples
+// // 3, 4, 3 ➞ 2
 
-// 1, 1, 1 ➞ 3
+// // 1, 1, 1 ➞ 3
 
-// 3, 4, 1 ➞ 0 
-// Notes
-// Your function must return 0, 2 or 3.
+// // 3, 4, 1 ➞ 0 
+// // Notes
+// // Your function must return 0, 2 or 3.
 
-// // *********SOLUTION*************
+// // // *********SOLUTION*************
 
-function equal(a, b, c) {
-  let counter = 0;
-  if (a === b) counter++;
-  if (a === c) counter++;
-  if (b === a) counter++;
-  if (b === c) counter++;
-  if (c === a) counter++;
-  if (c === b) counter++;
-  if ((a === b) && (a === c) && (b === c)) {
-    return 3;
-  }  
-  return counter;
-}
+// function equal(a, b, c) {
+//   let counter = 0;
+//   if (a === b) counter++;
+//   if (a === c) counter++;
+//   if (b === a) counter++;
+//   if (b === c) counter++;
+//   if (c === a) counter++;
+//   if (c === b) counter++;
+//   if ((a === b) && (a === c) && (b === c)) {
+//     return 3;
+//   }  
+//   return counter;
+// }
 
-console.log(equal(3, 4, 3))
-console.log(equal(3, 3, 3))
+// console.log(equal(3, 4, 3))
+// console.log(equal(3, 3, 3))
+
+// // COOL WAY TO GET RID OF DUPLICATES IN AN ARRAY
+
+// const myArray = [1, 1, 1, 2, 3, 4, 4, 4, 5, 5]
+
+
+// const removeDupes = (arr) => {
+
+//   return [...new Set(arr)]
+
+// }
+
+// console.log(removeDupes(myArray));
+
 // ********************************************************************************
 
+// EXERCISE 25
+
+// *********SOLUTION*************
+
+// ********************************************************************************
