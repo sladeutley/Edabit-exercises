@@ -612,7 +612,7 @@
 //     if (num%i === 0) {
 //       // AS SOON AS THIS IF STATEMENT IS TRUE, THE LOOP BREAKS AND RETURNS FALSE
 //       return false;
-//     } 
+//     }
 //   }
 //     return num !== 1
 // }
@@ -658,7 +658,7 @@
 
 // // 1, 1, 1 ➞ 3
 
-// // 3, 4, 1 ➞ 0 
+// // 3, 4, 1 ➞ 0
 // // Notes
 // // Your function must return 0, 2 or 3.
 
@@ -674,7 +674,7 @@
 //   if (c === b) counter++;
 //   if ((a === b) && (a === c) && (b === c)) {
 //     return 3;
-//   }  
+//   }
 //   return counter;
 // }
 
@@ -684,7 +684,6 @@
 // // COOL WAY TO GET RID OF DUPLICATES IN AN ARRAY
 
 // const myArray = [1, 1, 1, 2, 3, 4, 4, 4, 5, 5]
-
 
 // const removeDupes = (arr) => {
 
@@ -731,17 +730,48 @@
 // console.log(getMiddle("A"));
 // ********************************************************************************
 
-// EXERCISE 26
+// // EXERCISE 26
 
-// Multiply By Length
-// -Create a function to multiply all values in an array by the amount of values in that array
-// Example(2, 3, 1, 0 becomes 8,12,4,0) NOTE: All values are numbers.
+// // Multiply By Length
+// // -Create a function to multiply all values in an array by the amount of values in that array
+// // Example(2, 3, 1, 0 becomes 8,12,4,0) NOTE: All values are numbers.
+
+// // *********SOLUTION*************
+
+// function MultiplyByLength(arr) {
+// 	return arr.map(num => num * arr.length)
+// }
+
+// console.log(MultiplyByLength([2, 3, 1, 0]));
+// ********************************************************************************
+
+// EXERCISE 27
+
+// Sort Numbers in Ascending Order
+// Create a function that takes an array of numbers and returns a new array, sorted in ascending order (smallest to biggest).
+// Rules
+// Sort numbers array in ascending order.
+// If functions argument is null, an empty array or undefined, return an empty array.
+// Return new array of sorted numbers.
+// Examples
+// [1, 2, 10, 50, 5] ➞ [1, 2, 5, 10, 50]
+
+// [80, 29, 4, -95, -24, 85] ➞ [-95, -24, 4, 29, 80, 85]
+
+// null ➞ []
+
+// [] ➞ []
+// Notes
+// The numbers being passed to sortNumsAscending() can be positive or negative.
 
 // *********SOLUTION*************
 
-function MultiplyByLength(arr) {
-	return arr.map(num => num * arr.length)
+function sortNumsAscending(arr) {
+  if (arr === null) {
+    return [];
+  } else return arr.sort((a, b) => a - b);
 }
 
-console.log(MultiplyByLength([2, 3, 1, 0]));
+console.log(sortNumsAscending([80, 29, 4, -95, -24, 85]));
+console.log(sortNumsAscending(null));
 // ********************************************************************************
