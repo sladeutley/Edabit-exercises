@@ -814,23 +814,62 @@
 
 // ********************************************************************************
 
-// EXERCISE 28
+// // EXERCISE 28
 
-// Format Number with Comma(s) Separating Thousands
-// Create a function that takes a number as an argument and returns a string formatted to separate thousands.
+// // Format Number with Comma(s) Separating Thousands
+// // Create a function that takes a number as an argument and returns a string formatted to separate thousands.
+// // Examples
+// // 1000 ➞ "1,000"
+
+// // 100000 ➞ "100,000"
+
+// // 20 ➞ "20"
+
+// // *********SOLUTION*************
+
+// function formatNum(num) {
+// 	return num.toLocaleString();
+// }
+
+// console.log(formatNum(1000))
+// console.log(formatNum(100000))
+
+// ********************************************************************************
+
+// EXERCISE 29
+
+// Return the Sum of the Two Smallest Numbers
+// Create a function that takes an array of numbers and returns the sum of the two lowest positive numbers.
 // Examples
-// 1000 ➞ "1,000"
+// [19, 5, 42, 2, 77] ➞ 7
 
-// 100000 ➞ "100,000"
+// [10, 343445353, 3453445, 3453545353453] ➞ 3453455
 
-// 20 ➞ "20"
+// [2, 9, 6, -1] ➞ 8
 
-// *********SOLUTION*************
+// [879, 953, 694, -847, 342, 221, -91, -723, 791, -587] ➞ 563
 
-function formatNum(num) {
-	return num.toLocaleString();
+// [3683, 2902, 3951, -475, 1617, -2385] ➞ 4519
+// Notes
+// Don't count negative numbers.
+// Floats and empty arrays will not be used in any of the test cases.
+
+// // *********SOLUTION*************
+
+function sumTwoSmallestNums(arr) {
+  let positiveArr = [];
+  arr.forEach(num => {
+    if (num >= 0) {
+      positiveArr.push(num);
+    }
+  });
+  positiveArr = positiveArr
+    .sort((a, b) => a - b)
+    .slice(0, 2)
+    .reduce((a, b) => a + b);
+  return positiveArr;
 }
 
-console.log(formatNum(1000))
-console.log(formatNum(100000))
+console.log(sumTwoSmallestNums([3683, 2902, 3951, -475, 1617, -2385]));
+
 // ********************************************************************************
