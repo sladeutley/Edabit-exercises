@@ -745,33 +745,63 @@
 // console.log(MultiplyByLength([2, 3, 1, 0]));
 // ********************************************************************************
 
+// // EXERCISE 27
+
+// // Sort Numbers in Ascending Order
+// // Create a function that takes an array of numbers and returns a new array, sorted in ascending order (smallest to biggest).
+// // Rules
+// // Sort numbers array in ascending order.
+// // If functions argument is null, an empty array or undefined, return an empty array.
+// // Return new array of sorted numbers.
+// // Examples
+// // [1, 2, 10, 50, 5] ➞ [1, 2, 5, 10, 50]
+
+// // [80, 29, 4, -95, -24, 85] ➞ [-95, -24, 4, 29, 80, 85]
+
+// // null ➞ []
+
+// // [] ➞ []
+// // Notes
+// // The numbers being passed to sortNumsAscending() can be positive or negative.
+
+// // *********SOLUTION*************
+
+// function sortNumsAscending(arr) {
+//   if (arr === null) {
+//     return [];
+//   } else return arr.sort((a, b) => a - b);
+// }
+
+// console.log(sortNumsAscending([80, 29, 4, -95, -24, 85]));
+// console.log(sortNumsAscending(null));
+// ********************************************************************************
+
 // EXERCISE 27
 
-// Sort Numbers in Ascending Order
-// Create a function that takes an array of numbers and returns a new array, sorted in ascending order (smallest to biggest).
-// Rules
-// Sort numbers array in ascending order.
-// If functions argument is null, an empty array or undefined, return an empty array.
-// Return new array of sorted numbers.
+// Find the Minimum, Maximum, Length and Average Values
+// Create a function that takes an array of numbers and returns the following statistics:
+// Minimum Value
+// Maximum Value
+// Sequence Length
+// Average Value
 // Examples
-// [1, 2, 10, 50, 5] ➞ [1, 2, 5, 10, 50]
+// [6, 9, 15, -2, 92, 11] ➞ [-2, 92, 6, 21.833333333333332]
 
-// [80, 29, 4, -95, -24, 85] ➞ [-95, -24, 4, 29, 80, 85]
+// [30, 43, 20, 92, 3, 74] ➞ [3, 92, 6, 43.666666666666664]
 
-// null ➞ []
-
-// [] ➞ []
-// Notes
-// The numbers being passed to sortNumsAscending() can be positive or negative.
+// [4.54, 8.32, 5.20] ➞ [4.54, 8.32, 3, 6.02]
 
 // *********SOLUTION*************
 
-function sortNumsAscending(arr) {
-  if (arr === null) {
-    return [];
-  } else return arr.sort((a, b) => a - b);
+function minMaxLengthAverage(arr) {
+  let newArr = [];
+  newArr.push(Math.min(...arr));
+  newArr.push(Math.max(...arr));
+  newArr.push(arr.length);
+  newArr.push((arr.reduce((a,b) => a + b)) / arr.length)
+  return newArr;
 }
 
-console.log(sortNumsAscending([80, 29, 4, -95, -24, 85]));
-console.log(sortNumsAscending(null));
+console.log(minMaxLengthAverage([6, 9, 15, -2, 92, 11]));
+
 // ********************************************************************************
