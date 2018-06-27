@@ -836,40 +836,82 @@
 
 // ********************************************************************************
 
-// EXERCISE 29
+// // EXERCISE 29
 
-// Return the Sum of the Two Smallest Numbers
-// Create a function that takes an array of numbers and returns the sum of the two lowest positive numbers.
+// // Return the Sum of the Two Smallest Numbers
+// // Create a function that takes an array of numbers and returns the sum of the two lowest positive numbers.
+// // Examples
+// // [19, 5, 42, 2, 77] ➞ 7
+
+// // [10, 343445353, 3453445, 3453545353453] ➞ 3453455
+
+// // [2, 9, 6, -1] ➞ 8
+
+// // [879, 953, 694, -847, 342, 221, -91, -723, 791, -587] ➞ 563
+
+// // [3683, 2902, 3951, -475, 1617, -2385] ➞ 4519
+// // Notes
+// // Don't count negative numbers.
+// // Floats and empty arrays will not be used in any of the test cases.
+
+// // // *********SOLUTION*************
+
+// function sumTwoSmallestNums(arr) {
+//   let positiveArr = [];
+//   arr.forEach(num => {
+//     if (num >= 0) {
+//       positiveArr.push(num);
+//     }
+//   });
+//   positiveArr = positiveArr
+//     .sort((a, b) => a - b)
+//     .slice(0, 2)
+//     .reduce((a, b) => a + b);
+//   return positiveArr;
+// }
+
+// console.log(sumTwoSmallestNums([3683, 2902, 3951, -475, 1617, -2385]));
+
+// ********************************************************************************
+
+// EXERCISE 30
+
+// Return the Highest and Lowest Numbers
+// Create a function that accepts a string of space separated numbers and returns the highest and lowest number (as a string).
 // Examples
-// [19, 5, 42, 2, 77] ➞ 7
+// "1 2 3 4 5" ➞ "5 1"
 
-// [10, 343445353, 3453445, 3453545353453] ➞ 3453455
+// "1 2 -3 4 5" ➞ "5 -3"
 
-// [2, 9, 6, -1] ➞ 8
+// "1 9 3 4 -5" ➞ "9 -5"
 
-// [879, 953, 694, -847, 342, 221, -91, -723, 791, -587] ➞ 563
+// "13" ➞ "13 13"
 
-// [3683, 2902, 3951, -475, 1617, -2385] ➞ 4519
 // Notes
-// Don't count negative numbers.
-// Floats and empty arrays will not be used in any of the test cases.
+// All numbers are valid Int32, no need to validate them.
+// There will always be at least one number in the input string.
+// Output string must be two numbers separated by a single space, and highest number is first.
 
-// // *********SOLUTION*************
+// *********SOLUTION***************
 
-function sumTwoSmallestNums(arr) {
-  let positiveArr = [];
-  arr.forEach(num => {
-    if (num >= 0) {
-      positiveArr.push(num);
-    }
-  });
-  positiveArr = positiveArr
-    .sort((a, b) => a - b)
-    .slice(0, 2)
-    .reduce((a, b) => a + b);
-  return positiveArr;
+// // *********OPTION 1*************
+
+function highLow(str) {
+  let newArr = [];
+  str.split(" ").forEach(num => {
+    newArr.push(+num)
+  })
+  let strArr = [Math.max(...newArr), Math.min(...newArr)].join(" ");
+  return strArr;
 }
 
-console.log(sumTwoSmallestNums([3683, 2902, 3951, -475, 1617, -2385]));
+console.log(highLow("1 9 3 4 -5"))
+console.log(highLow("13"))
+
+// // *********OPTION 2*************
+
+function highLow(str) {
+  return [Math.max(... str.split(' ')), Math.min(... str.split(' '))].join(' ');
+}
 
 // ********************************************************************************
