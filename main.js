@@ -776,32 +776,61 @@
 // console.log(sortNumsAscending(null));
 // ********************************************************************************
 
-// EXERCISE 27
+// // EXERCISE 27
 
-// Find the Minimum, Maximum, Length and Average Values
-// Create a function that takes an array of numbers and returns the following statistics:
-// Minimum Value
-// Maximum Value
-// Sequence Length
-// Average Value
+// // Find the Minimum, Maximum, Length and Average Values
+// // Create a function that takes an array of numbers and returns the following statistics:
+// // Minimum Value
+// // Maximum Value
+// // Sequence Length
+// // Average Value
+// // Examples
+// // [6, 9, 15, -2, 92, 11] ➞ [-2, 92, 6, 21.833333333333332]
+
+// // [30, 43, 20, 92, 3, 74] ➞ [3, 92, 6, 43.666666666666664]
+
+// // [4.54, 8.32, 5.20] ➞ [4.54, 8.32, 3, 6.02]
+
+// // *********SOLUTION*************
+
+// // *********OPTION 1*************
+
+// function minMaxLengthAverage(arr) {
+//   let newArr = [];
+//   newArr.push(Math.min(...arr));
+//   newArr.push(Math.max(...arr));
+//   newArr.push(arr.length);
+//   newArr.push((arr.reduce((a,b) => a + b)) / arr.length)
+//   return newArr;
+// }
+
+// console.log(minMaxLengthAverage([6, 9, 15, -2, 92, 11]));
+
+// // ************OPTION 2*********************************
+
+// function minMaxLengthAverage(arr) {
+//   return [Math.min(...arr), Math.max(...arr), arr.length, (arr.reduce((sum, n) => sum + n)) / arr.length];
+// }
+
+// ********************************************************************************
+
+// EXERCISE 28
+
+// Format Number with Comma(s) Separating Thousands
+// Create a function that takes a number as an argument and returns a string formatted to separate thousands.
 // Examples
-// [6, 9, 15, -2, 92, 11] ➞ [-2, 92, 6, 21.833333333333332]
+// 1000 ➞ "1,000"
 
-// [30, 43, 20, 92, 3, 74] ➞ [3, 92, 6, 43.666666666666664]
+// 100000 ➞ "100,000"
 
-// [4.54, 8.32, 5.20] ➞ [4.54, 8.32, 3, 6.02]
+// 20 ➞ "20"
 
 // *********SOLUTION*************
 
-function minMaxLengthAverage(arr) {
-  let newArr = [];
-  newArr.push(Math.min(...arr));
-  newArr.push(Math.max(...arr));
-  newArr.push(arr.length);
-  newArr.push((arr.reduce((a,b) => a + b)) / arr.length)
-  return newArr;
+function formatNum(num) {
+	return num.toLocaleString();
 }
 
-console.log(minMaxLengthAverage([6, 9, 15, -2, 92, 11]));
-
+console.log(formatNum(1000))
+console.log(formatNum(100000))
 // ********************************************************************************
