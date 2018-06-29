@@ -916,27 +916,57 @@
 
 // ********************************************************************************
 
-// EXERCISE 31
+// // EXERCISE 31
 
-// H4ck3r Sp34k
-// Create a function that takes a string as an argument and returns a coded (h4ck3r 5p34k) version of the string.
+// // H4ck3r Sp34k
+// // Create a function that takes a string as an argument and returns a coded (h4ck3r 5p34k) version of the string.
+// // Examples
+// // "javascript is cool" ➞ "j4v45cr1pt 15 c00l"
+
+// // "programming is fun" ➞ "pr0gr4mm1ng 15 fun"
+
+// // "become a coder" ➞ "b3c0m3 4 c0d3r"
+// // Notes
+// // In order to work properly, the function should replace all 'a's with 4, 'e's with 3, 'i's with 1, 'o's with 0, and 's's with 5.
+
+// // *********SOLUTION***************
+
+// function hackerSpeak(str) {
+//   return str.replace(/a/gi, 4).replace(/e/gi, 3).replace(/i/gi, 1).replace(/o/gi, 0).replace(/s/gi, 5);
+// }
+
+// console.log(hackerSpeak("javascript is cool"))
+// console.log(hackerSpeak("become a coder"))
+
+// ********************************************************************************
+
+// EXERCISE 32
+
+// Return the Factorial
+// Create a function that takes an integer and returns the factorial of that integer. That is, the integer multiplied by all positive lower integers.
 // Examples
-// "javascript is cool" ➞ "j4v45cr1pt 15 c00l"
+// 3 ➞ 6
 
-// "programming is fun" ➞ "pr0gr4mm1ng 15 fun"
+// 5 ➞ 120
 
-// "become a coder" ➞ "b3c0m3 4 c0d3r"
+// 13 ➞ 6227020800
 // Notes
-// In order to work properly, the function should replace all 'a's with 4, 'e's with 3, 'i's with 1, 'o's with 0, and 's's with 5.
+// Assume all inputs are >= 0.
+// 0! = 1.
 
 // *********SOLUTION***************
 
-function hackerSpeak(str) {
-  return str.replace(/a/gi, 4).replace(/e/gi, 3).replace(/i/gi, 1).replace(/o/gi, 0).replace(/s/gi, 5);
+function factorial(int) {
+  let result = 1;
+  for (let i = 1; i <= int; i++) { 
+    result *= i;
+  }
+  return result;
 }
 
-console.log(hackerSpeak("javascript is cool"))
-console.log(hackerSpeak("become a coder"))
-
+console.log(factorial(3));
+console.log(factorial(5));
+console.log(factorial(13));
+console.log(factorial(1));
 
 // ********************************************************************************
