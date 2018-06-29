@@ -874,44 +874,69 @@
 
 // ********************************************************************************
 
-// EXERCISE 30
+// // EXERCISE 30
 
-// Return the Highest and Lowest Numbers
-// Create a function that accepts a string of space separated numbers and returns the highest and lowest number (as a string).
+// // Return the Highest and Lowest Numbers
+// // Create a function that accepts a string of space separated numbers and returns the highest and lowest number (as a string).
+// // Examples
+// // "1 2 3 4 5" ➞ "5 1"
+
+// // "1 2 -3 4 5" ➞ "5 -3"
+
+// // "1 9 3 4 -5" ➞ "9 -5"
+
+// // "13" ➞ "13 13"
+
+// // Notes
+// // All numbers are valid Int32, no need to validate them.
+// // There will always be at least one number in the input string.
+// // Output string must be two numbers separated by a single space, and highest number is first.
+
+// // *********SOLUTION***************
+
+// // // *********OPTION 1*************
+
+// function highLow(str) {
+//   let newArr = [];
+//   str.split(" ").forEach(num => {
+//     newArr.push(+num)
+//   })
+//   let strArr = [Math.max(...newArr), Math.min(...newArr)].join(" ");
+//   return strArr;
+// }
+
+// console.log(highLow("1 9 3 4 -5"))
+// console.log(highLow("13"))
+
+// // // *********OPTION 2*************
+
+// function highLow(str) {
+//   return [Math.max(... str.split(' ')), Math.min(... str.split(' '))].join(' ');
+// }
+
+// ********************************************************************************
+
+// EXERCISE 31
+
+// H4ck3r Sp34k
+// Create a function that takes a string as an argument and returns a coded (h4ck3r 5p34k) version of the string.
 // Examples
-// "1 2 3 4 5" ➞ "5 1"
+// "javascript is cool" ➞ "j4v45cr1pt 15 c00l"
 
-// "1 2 -3 4 5" ➞ "5 -3"
+// "programming is fun" ➞ "pr0gr4mm1ng 15 fun"
 
-// "1 9 3 4 -5" ➞ "9 -5"
-
-// "13" ➞ "13 13"
-
+// "become a coder" ➞ "b3c0m3 4 c0d3r"
 // Notes
-// All numbers are valid Int32, no need to validate them.
-// There will always be at least one number in the input string.
-// Output string must be two numbers separated by a single space, and highest number is first.
+// In order to work properly, the function should replace all 'a's with 4, 'e's with 3, 'i's with 1, 'o's with 0, and 's's with 5.
 
 // *********SOLUTION***************
 
-// // *********OPTION 1*************
-
-function highLow(str) {
-  let newArr = [];
-  str.split(" ").forEach(num => {
-    newArr.push(+num)
-  })
-  let strArr = [Math.max(...newArr), Math.min(...newArr)].join(" ");
-  return strArr;
+function hackerSpeak(str) {
+  return str.replace(/a/gi, 4).replace(/e/gi, 3).replace(/i/gi, 1).replace(/o/gi, 0).replace(/s/gi, 5);
 }
 
-console.log(highLow("1 9 3 4 -5"))
-console.log(highLow("13"))
+console.log(hackerSpeak("javascript is cool"))
+console.log(hackerSpeak("become a coder"))
 
-// // *********OPTION 2*************
-
-function highLow(str) {
-  return [Math.max(... str.split(' ')), Math.min(... str.split(' '))].join(' ');
-}
 
 // ********************************************************************************
