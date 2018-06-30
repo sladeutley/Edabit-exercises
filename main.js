@@ -993,35 +993,103 @@
 // console.log(formatPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
 // ********************************************************************************
 
-// EXERCISE 34
+// // EXERCISE 34
 
-// Find the Missing Number
-// Create a function that takes an array of numbers between 1 and 10 (excluding one number) and returns the missing number.
+// // Find the Missing Number
+// // Create a function that takes an array of numbers between 1 and 10 (excluding one number) and returns the missing number.
+// // Examples
+// // [1, 2, 3, 4, 6, 7, 8, 9, 10] ➞ 5
+
+// // [7, 2, 3, 6, 5, 9, 1, 4, 8] ➞ 10
+
+// // [10, 5, 1, 2, 4, 6, 8, 3, 9] ➞ 7
+// // Notes
+// // The array of numbers will be unsorted (not in order).
+// // Only one number will be missing.
+
+// // *********SOLUTION***************
+
+// // OPTION 1
+
+// function missingNums(arr) {
+//   let missingNum = null;
+//   let sortedArr = arr.sort((a, b) => a - b);
+//   for (let i = 0; i < sortedArr.length + 1; i++) {
+//     if (sortedArr[i] !== i + 1) {
+//       missingNum = i + 1;
+//       break;
+//     }
+//   }
+//   return missingNum;
+// }
+
+// // OPTION 2
+
+// const missingNums = (arr) => {
+//   for (let i = 1; i <= arr.length + 1; i++) {
+//     if (arr.indexOf(i) === -1) return i;
+//   }
+// }
+
+// console.log(missingNums([7, 2, 3, 6, 5, 9, 1, 4, 8]));
+// console.log(missingNums([10, 5, 1, 2, 4, 6, 8, 3, 9]));
+
+// ********************************************************************************
+
+// EXERCISE 35
+
+// X's and O's
+// Create a function that takes a string, checks if it has the same number of 'x's and 'o's and returns either true or false.
+// Rules
+// Return a boolean value (true or false).
+// The string can contain any character.
+// When neither an x nor an o is in the string, return true.
 // Examples
-// [1, 2, 3, 4, 6, 7, 8, 9, 10] ➞ 5
+// "ooxx" ➞ true
 
-// [7, 2, 3, 6, 5, 9, 1, 4, 8] ➞ 10
+// "xooxx" ➞ false
 
-// [10, 5, 1, 2, 4, 6, 8, 3, 9] ➞ 7
+// "ooxXm" ➞ true (case insensitive)
+
+// "zpzpzpp" ➞ true (returns true if no x and o)
+
+// "zzoo" ➞ false
 // Notes
-// The array of numbers will be unsorted (not in order).
-// Only one number will be missing.
+// Remember to return true if there aren't any x's or o's.
+// Must be case insensitive.
 
 // *********SOLUTION***************
 
-function missingNums(arr) {
-  let missingNum = null;
-  let sortedArr = arr.sort((a, b) => a - b);
-  for (let i = 0; i < sortedArr.length + 1; i++) {
-    if (sortedArr[i] !== i + 1) {
-      missingNum = i + 1;
-      break;
+// OPTION 1
+
+function XO(str) {
+  let counterX = 0;
+  let counterO = 0;
+  let xoArr = str.split("");
+  xoArr.forEach(letter => {
+    if (letter.includes("x") || letter.includes("X")) {
+      counterX++;
+    } else if (letter.includes("o") || letter.includes("O")) {
+      counterO++;
     }
-  }
-  return missingNum;
+  });
+  return counterX === counterO;
 }
 
-console.log(missingNums([7, 2, 3, 6, 5, 9, 1, 4, 8]));
-console.log(missingNums([10, 5, 1, 2, 4, 6, 8, 3, 9]));
+console.log(XO("ooxXm"));
+
+// OPTION 2
+
+function XO(str) {
+  return str.replace(/[^x]/ig, '').length === str.replace(/[^o]/ig, '').length
+}
+
+// OPTION 3
+
+function XO(str) {
+  let x = str.toLowerCase().split('').filter(x => x === 'x').length;
+  let o = str.toLowerCase().split('').filter(x => x === 'o').length;
+  return x === o;
+}
 
 // ********************************************************************************
