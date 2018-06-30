@@ -1036,60 +1036,103 @@
 
 // ********************************************************************************
 
-// EXERCISE 35
+// // EXERCISE 35
 
-// X's and O's
-// Create a function that takes a string, checks if it has the same number of 'x's and 'o's and returns either true or false.
+// // X's and O's
+// // Create a function that takes a string, checks if it has the same number of 'x's and 'o's and returns either true or false.
+// // Rules
+// // Return a boolean value (true or false).
+// // The string can contain any character.
+// // When neither an x nor an o is in the string, return true.
+// // Examples
+// // "ooxx" ➞ true
+
+// // "xooxx" ➞ false
+
+// // "ooxXm" ➞ true (case insensitive)
+
+// // "zpzpzpp" ➞ true (returns true if no x and o)
+
+// // "zzoo" ➞ false
+// // Notes
+// // Remember to return true if there aren't any x's or o's.
+// // Must be case insensitive.
+
+// // *********SOLUTION***************
+
+// // OPTION 1
+
+// function XO(str) {
+//   let counterX = 0;
+//   let counterO = 0;
+//   let xoArr = str.split("");
+//   xoArr.forEach(letter => {
+//     if (letter.includes("x") || letter.includes("X")) {
+//       counterX++;
+//     } else if (letter.includes("o") || letter.includes("O")) {
+//       counterO++;
+//     }
+//   });
+//   return counterX === counterO;
+// }
+
+// console.log(XO("ooxXm"));
+
+// // OPTION 2
+
+// function XO(str) {
+//   return str.replace(/[^x]/ig, '').length === str.replace(/[^o]/ig, '').length
+// }
+
+// // OPTION 3
+
+// function XO(str) {
+//   let x = str.toLowerCase().split('').filter(x => x === 'x').length;
+//   let o = str.toLowerCase().split('').filter(x => x === 'o').length;
+//   return x === o;
+// }
+
+// ********************************************************************************
+
+// EXERCISE 36
+
+// Wurst Is Better
+// Wurst is the best. Create a function that takes a string and replaces every mention of any type of sausage with the German word "Wurst," unless—of course—the sausage is already a type of German "Wurst" (i.e. "Bratwurst", see below), then leave the sausage name unchanged.
+// Examples of German Wursts
+// Bratwurst
+// Kochwurst
+// Leberwurst
+// Mettwurst
+// Rostbratwurst
+// List of sausages that need to turn into "Wurst"
+// Kielbasa
+// Chorizo
+// Moronga
+// Salami
+// Sausage
+// Andouille
+// Naem
+// Merguez
+// Gurka
+// Snorkers
+// Pepperoni
 // Rules
-// Return a boolean value (true or false).
-// The string can contain any character.
-// When neither an x nor an o is in the string, return true.
+// Replace every mention of any sausage from the above list, with the word "Wurst"
+// Do not replace any German sausage with the word "Wurst"
+// The word "Wurst" must be titlecase
+// Return the Wurst-ified string
 // Examples
-// "ooxx" ➞ true
+// "I like chorizos, but not sausages" ➞ "I like Wursts, but not Wursts"
 
-// "xooxx" ➞ false
-
-// "ooxXm" ➞ true (case insensitive)
-
-// "zpzpzpp" ➞ true (returns true if no x and o)
-
-// "zzoo" ➞ false
+// "Bratwurst and Rostbratwurst are sausages" ➞ "Bratwurst and Rostbratwurst are Wursts"
 // Notes
-// Remember to return true if there aren't any x's or o's.
-// Must be case insensitive.
+// All test cases contain valid strings. All German sausage names in test cases contain the word "wurst".
 
 // *********SOLUTION***************
 
-// OPTION 1
-
-function XO(str) {
-  let counterX = 0;
-  let counterO = 0;
-  let xoArr = str.split("");
-  xoArr.forEach(letter => {
-    if (letter.includes("x") || letter.includes("X")) {
-      counterX++;
-    } else if (letter.includes("o") || letter.includes("O")) {
-      counterO++;
-    }
-  });
-  return counterX === counterO;
+function wurstIsBetter(str) {
+	return str.replace(/kielbasa|chorizo|moronga|salami|sausage|andouille|naem|merguez|gurka|snorkers|pepperoni/gi, 'Wurst');
 }
 
-console.log(XO("ooxXm"));
-
-// OPTION 2
-
-function XO(str) {
-  return str.replace(/[^x]/ig, '').length === str.replace(/[^o]/ig, '').length
-}
-
-// OPTION 3
-
-function XO(str) {
-  let x = str.toLowerCase().split('').filter(x => x === 'x').length;
-  let o = str.toLowerCase().split('').filter(x => x === 'o').length;
-  return x === o;
-}
-
+console.log(wurstIsBetter("I like chorizos, but not sausages"));
 // ********************************************************************************
