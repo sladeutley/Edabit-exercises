@@ -940,33 +940,57 @@
 
 // ********************************************************************************
 
-// EXERCISE 32
+// // EXERCISE 32
 
-// Return the Factorial
-// Create a function that takes an integer and returns the factorial of that integer. That is, the integer multiplied by all positive lower integers.
+// // Return the Factorial
+// // Create a function that takes an integer and returns the factorial of that integer. That is, the integer multiplied by all positive lower integers.
+// // Examples
+// // 3 ➞ 6
+
+// // 5 ➞ 120
+
+// // 13 ➞ 6227020800
+// // Notes
+// // Assume all inputs are >= 0.
+// // 0! = 1.
+
+// // *********SOLUTION***************
+
+// function factorial(int) {
+//   let result = 1;
+//   for (let i = 1; i <= int; i++) { 
+//     result *= i;
+//   }
+//   return result;
+// }
+
+// console.log(factorial(3));
+// console.log(factorial(5));
+// console.log(factorial(13));
+// console.log(factorial(1));
+
+// ********************************************************************************
+
+// EXERCISE 33
+
+// Phone Number Formatting
+// Create a function that takes an array of 10 numbers (between 0 and 9) and returns a string of those numbers formatted as a phone number (e.g. (555) 555-5555).
 // Examples
-// 3 ➞ 6
+// [1, 2, 3, 4, 5, 6, 7, 8, 9, 0] ➞ "(123) 456-7890"
 
-// 5 ➞ 120
+// [5, 1, 9, 5, 5, 5, 4, 4, 6, 8] ➞ "(519) 555-4468"
 
-// 13 ➞ 6227020800
+// [3, 4, 5, 5, 0, 1, 2, 5, 2, 7] ➞ "(345) 501-2527"
 // Notes
-// Assume all inputs are >= 0.
-// 0! = 1.
+// Don't forget the space after the closing parenthese.
 
 // *********SOLUTION***************
 
-function factorial(int) {
-  let result = 1;
-  for (let i = 1; i <= int; i++) { 
-    result *= i;
-  }
-  return result;
+function formatPhoneNumber(numbers) {
+	return `(${numbers[0]}${numbers[1]}${numbers[2]}) ${numbers[3]}${numbers[4]}${numbers[5]}-${numbers[6]}${numbers[7]}${numbers[8]}${numbers[9]}`
 }
 
-console.log(factorial(3));
-console.log(factorial(5));
-console.log(factorial(13));
-console.log(factorial(1));
-
+console.log(formatPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
 // ********************************************************************************
+
+
