@@ -958,7 +958,7 @@
 
 // function factorial(int) {
 //   let result = 1;
-//   for (let i = 1; i <= int; i++) { 
+//   for (let i = 1; i <= int; i++) {
 //     result *= i;
 //   }
 //   return result;
@@ -971,26 +971,57 @@
 
 // ********************************************************************************
 
-// EXERCISE 33
+// // EXERCISE 33
 
-// Phone Number Formatting
-// Create a function that takes an array of 10 numbers (between 0 and 9) and returns a string of those numbers formatted as a phone number (e.g. (555) 555-5555).
+// // Phone Number Formatting
+// // Create a function that takes an array of 10 numbers (between 0 and 9) and returns a string of those numbers formatted as a phone number (e.g. (555) 555-5555).
+// // Examples
+// // [1, 2, 3, 4, 5, 6, 7, 8, 9, 0] ➞ "(123) 456-7890"
+
+// // [5, 1, 9, 5, 5, 5, 4, 4, 6, 8] ➞ "(519) 555-4468"
+
+// // [3, 4, 5, 5, 0, 1, 2, 5, 2, 7] ➞ "(345) 501-2527"
+// // Notes
+// // Don't forget the space after the closing parenthese.
+
+// // *********SOLUTION***************
+
+// function formatPhoneNumber(numbers) {
+// 	return `(${numbers[0]}${numbers[1]}${numbers[2]}) ${numbers[3]}${numbers[4]}${numbers[5]}-${numbers[6]}${numbers[7]}${numbers[8]}${numbers[9]}`
+// }
+
+// console.log(formatPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+// ********************************************************************************
+
+// EXERCISE 34
+
+// Find the Missing Number
+// Create a function that takes an array of numbers between 1 and 10 (excluding one number) and returns the missing number.
 // Examples
-// [1, 2, 3, 4, 5, 6, 7, 8, 9, 0] ➞ "(123) 456-7890"
+// [1, 2, 3, 4, 6, 7, 8, 9, 10] ➞ 5
 
-// [5, 1, 9, 5, 5, 5, 4, 4, 6, 8] ➞ "(519) 555-4468"
+// [7, 2, 3, 6, 5, 9, 1, 4, 8] ➞ 10
 
-// [3, 4, 5, 5, 0, 1, 2, 5, 2, 7] ➞ "(345) 501-2527"
+// [10, 5, 1, 2, 4, 6, 8, 3, 9] ➞ 7
 // Notes
-// Don't forget the space after the closing parenthese.
+// The array of numbers will be unsorted (not in order).
+// Only one number will be missing.
 
 // *********SOLUTION***************
 
-function formatPhoneNumber(numbers) {
-	return `(${numbers[0]}${numbers[1]}${numbers[2]}) ${numbers[3]}${numbers[4]}${numbers[5]}-${numbers[6]}${numbers[7]}${numbers[8]}${numbers[9]}`
+function missingNums(arr) {
+  let missingNum = null;
+  let sortedArr = arr.sort((a, b) => a - b);
+  for (let i = 0; i < sortedArr.length + 1; i++) {
+    if (sortedArr[i] !== i + 1) {
+      missingNum = i + 1;
+      break;
+    }
+  }
+  return missingNum;
 }
 
-console.log(formatPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+console.log(missingNums([7, 2, 3, 6, 5, 9, 1, 4, 8]));
+console.log(missingNums([10, 5, 1, 2, 4, 6, 8, 3, 9]));
+
 // ********************************************************************************
-
-
