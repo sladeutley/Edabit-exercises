@@ -1160,26 +1160,61 @@
 
 // ********************************************************************************
 
-//*** EXERCISE 38
+// //*** EXERCISE 38
 
-// Count Ones in Binary Representation of Integer
-// Count the amount of ones in the binary representation of an integer. So for example, since 12 is '1100' in binary, the return value should be 2.
+// // Count Ones in Binary Representation of Integer
+// // Count the amount of ones in the binary representation of an integer. So for example, since 12 is '1100' in binary, the return value should be 2.
+// // Examples
+// // 0 ➞ 0
+
+// // 100 ➞ 3
+
+// // 999 ➞ 8
+// // Notes
+// // The input will always be a valid integer (number).
+
+// // ***********SOLUTION*****************
+
+// function countOnes(i) {
+// 	return i.toString(2).replace(/0/g, "").length
+// }
+
+// console.log(countOnes(999));
+// console.log(countOnes(12));
+
+// ********************************************************************************
+
+// EXERCISE 39
+
+// Capitalize the Names
+// Create a function that takes an array of names and returns an array with the first letter capitalized.
 // Examples
-// 0 ➞ 0
+// ["mavis", "senaida", "letty"] ➞ ["Mavis", "Senaida", "Letty"]
 
-// 100 ➞ 3
+// ["samuel", "MABELLE", "letitia", "meridith"] ➞ ["Samuel", "Mabelle", "Letitia", "Meridith"]
 
-// 999 ➞ 8
+// ["Slyvia", "Kristal", "Sharilyn", "Calista"] ➞ ["Slyvia", "Kristal", "Sharilyn", "Calista"]
 // Notes
-// The input will always be a valid integer (number).
+// Don't change the order of the original array.
+// Notice in the second example above, "MABELLE" is returned as "Mabelle".
 
-// ***********SOLUTION*****************
+// // ***********SOLUTION*****************
 
-function countOnes(i) {
-	return i.toString(2).replace(/0/g, "").length
+// function capMe(arr) {
+// 	return arr.map(word => word.charAt(0).toUpperCase() + word.substring(1, word.length).toLowerCase())
+// }
+
+function capMe(arr) {
+  let capArr = [];
+  arr.forEach(word => {
+    capArr.push(
+      word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase()
+    );
+  });
+  return capArr;
 }
 
-console.log(countOnes(999));
-console.log(countOnes(12));
+console.log(capMe(["mavis", "senaida", "letty"]));
+console.log(capMe(["samuel", "MABELLE", "letitia", "meridith"]));
 
 // ********************************************************************************
