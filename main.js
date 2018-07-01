@@ -1094,45 +1094,92 @@
 
 // ********************************************************************************
 
-// EXERCISE 36
+// // EXERCISE 36
 
-// Wurst Is Better
-// Wurst is the best. Create a function that takes a string and replaces every mention of any type of sausage with the German word "Wurst," unless—of course—the sausage is already a type of German "Wurst" (i.e. "Bratwurst", see below), then leave the sausage name unchanged.
-// Examples of German Wursts
-// Bratwurst
-// Kochwurst
-// Leberwurst
-// Mettwurst
-// Rostbratwurst
-// List of sausages that need to turn into "Wurst"
-// Kielbasa
-// Chorizo
-// Moronga
-// Salami
-// Sausage
-// Andouille
-// Naem
-// Merguez
-// Gurka
-// Snorkers
-// Pepperoni
-// Rules
-// Replace every mention of any sausage from the above list, with the word "Wurst"
-// Do not replace any German sausage with the word "Wurst"
-// The word "Wurst" must be titlecase
-// Return the Wurst-ified string
+// // Wurst Is Better
+// // Wurst is the best. Create a function that takes a string and replaces every mention of any type of sausage with the German word "Wurst," unless—of course—the sausage is already a type of German "Wurst" (i.e. "Bratwurst", see below), then leave the sausage name unchanged.
+// // Examples of German Wursts
+// // Bratwurst
+// // Kochwurst
+// // Leberwurst
+// // Mettwurst
+// // Rostbratwurst
+// // List of sausages that need to turn into "Wurst"
+// // Kielbasa
+// // Chorizo
+// // Moronga
+// // Salami
+// // Sausage
+// // Andouille
+// // Naem
+// // Merguez
+// // Gurka
+// // Snorkers
+// // Pepperoni
+// // Rules
+// // Replace every mention of any sausage from the above list, with the word "Wurst"
+// // Do not replace any German sausage with the word "Wurst"
+// // The word "Wurst" must be titlecase
+// // Return the Wurst-ified string
+// // Examples
+// // "I like chorizos, but not sausages" ➞ "I like Wursts, but not Wursts"
+
+// // "Bratwurst and Rostbratwurst are sausages" ➞ "Bratwurst and Rostbratwurst are Wursts"
+// // Notes
+// // All test cases contain valid strings. All German sausage names in test cases contain the word "wurst".
+
+// // *********SOLUTION***************
+
+// function wurstIsBetter(str) {
+// 	return str.replace(/kielbasa|chorizo|moronga|salami|sausage|andouille|naem|merguez|gurka|snorkers|pepperoni/gi, 'Wurst');
+// }
+
+// console.log(wurstIsBetter("I like chorizos, but not sausages"));
+// ********************************************************************************
+
+// //EXERCISE 37
+
+// // Sort Numbers in Descending Order
+// // Create a function that takes any nonnegative number as an argument and return it with it's digits in descending order. Descending order is when you sort from highest to lowest.
+// // Examples
+// // 123 ➞ 321
+
+// // 1254859723 ➞ 9875543221
+
+// // 73065 ➞ 76530
+// // Notes
+// // You can expect non-negative numbers for all test cases.
+
+// // ***********SOLUTION*****************
+
+// function sortDecending(num) {
+// 	return +num.toString().split("").sort((a,b) => b - a).join("");
+// }
+
+// console.log(sortDecending(73065));
+
+// ********************************************************************************
+
+//*** EXERCISE 38
+
+// Count Ones in Binary Representation of Integer
+// Count the amount of ones in the binary representation of an integer. So for example, since 12 is '1100' in binary, the return value should be 2.
 // Examples
-// "I like chorizos, but not sausages" ➞ "I like Wursts, but not Wursts"
+// 0 ➞ 0
 
-// "Bratwurst and Rostbratwurst are sausages" ➞ "Bratwurst and Rostbratwurst are Wursts"
+// 100 ➞ 3
+
+// 999 ➞ 8
 // Notes
-// All test cases contain valid strings. All German sausage names in test cases contain the word "wurst".
+// The input will always be a valid integer (number).
 
-// *********SOLUTION***************
+// ***********SOLUTION*****************
 
-function wurstIsBetter(str) {
-	return str.replace(/kielbasa|chorizo|moronga|salami|sausage|andouille|naem|merguez|gurka|snorkers|pepperoni/gi, 'Wurst');
+function countOnes(i) {
+	return i.toString(2).replace(/0/g, "").length
 }
 
-console.log(wurstIsBetter("I like chorizos, but not sausages"));
+console.log(countOnes(999));
+console.log(countOnes(12));
+
 // ********************************************************************************
