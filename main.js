@@ -1223,33 +1223,84 @@
 
 // ********************************************************************************
 
-// EXERCISE 40
+// // EXERCISE 40
 
-// Maskify the String
-// Usually when you sign up for an account to buy something, your credit card number, phone number or answer to a secret question is partially obscured in some way. Since someone could look over your shoulder, you don't want that shown on your screen. Hence, the website masks these strings.
-// Your task is to create a function that takes a string, transforms all but the last four characters into "#" and returns the new masked string.
+// // Maskify the String
+// // Usually when you sign up for an account to buy something, your credit card number, phone number or answer to a secret question is partially obscured in some way. Since someone could look over your shoulder, you don't want that shown on your screen. Hence, the website masks these strings.
+// // Your task is to create a function that takes a string, transforms all but the last four characters into "#" and returns the new masked string.
+// // Examples
+// // "4556364607935616" ➞ "############5616"
+
+// // "64607935616" ➞ "#######5616"
+
+// // "1" ➞ "1"
+
+// // "" ➞ ""
+// // Notes
+// // The maskify function must accept a string of any length.
+// // An empty string should return an empty string (fourth example above).
+
+// // // ***********SOLUTION*****************
+
+// function maskify(str) {
+//   if (str.length <= 4) {
+//     return str;
+//   } else return str.substring(0, str.length-4).replace(/[^ ]/g, "#") + str.substring(str.length - 4)
+// }
+
+// ////////// OPTION 2//////////////
+
+// function maskify(str) {
+//   return str.length > 4 ? '#'.repeat(str.length - 4) + str.substr(str.length - 4) : str;
+// }
+
+// console.log(maskify("4556364607935616"));
+// console.log(maskify("1"));
+// console.log(maskify("12asdfasdf45234"));
+
+// ********************************************************************************
+
+// EXERCISE 41
+
+// Switcharoo
+// Create a function that takes a string and returns a new string with its first and last characters swapped, except under three conditions:
+// If the length of the string is less than two, return "Incompatible.".
+// If the argument is not a string, return "Incompatible.".
+// If the first and last characters are the same, return "Two's a pair.".
 // Examples
-// "4556364607935616" ➞ "############5616"
+// "Cat, dog, and mouse." ➞ ".at, dog, and mouseC"
 
-// "64607935616" ➞ "#######5616"
+// "ada" ➞ "Two's a pair."
 
-// "1" ➞ "1"
+// "Ada" ➞ "adA"
 
-// "" ➞ ""
+// "z" ➞ "Incompatible."
+
+// [1, 2, 3] ➞ "Incompatible."
 // Notes
-// The maskify function must accept a string of any length.
-// An empty string should return an empty string (fourth example above).
+// Tests are case sensitive (e.g. "A" and "a" are not the same character).
 
-// // ***********SOLUTION*****************
+// // // ***********SOLUTION*****************
 
-function maskify(str) {
-  if (str.length <= 4) {
-    return str;
-  } else return str.substring(0, str.length-4).replace(/[^ ]/g, "#") + str.substring(str.length - 4)
+function flipEndChars(str) {
+  console.log('str[0]',str[0]);
+  if (str.length > 1 && typeof str === "string") {
+    if (str.charAt(0) === str.charAt(str.length - 1)) {
+      return "Two's a pair.";
+    } else
+      return (
+        str.charAt(str.length - 1) +
+        str.substring(1, str.length - 1) +
+        str.charAt(0)
+      );
+  } else if (str.length <= 1 || typeof str !== "string") {
+    return "Incompatible.";
+  }
 }
 
-console.log(maskify("4556364607935616"));
-console.log(maskify("1"));
-console.log(maskify("12asdfasdf45234"));
+console.log(flipEndChars("Cat, dog, and mouse."));
+console.log(flipEndChars("hello"));
+console.log(flipEndChars("z"));
+console.log(flipEndChars([1, 2]));
 
 // ********************************************************************************
