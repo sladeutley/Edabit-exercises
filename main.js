@@ -1283,7 +1283,6 @@
 // // // ***********SOLUTION*****************
 
 function flipEndChars(str) {
-  console.log('str[0]',str[0]);
   if (str.length > 1 && typeof str === "string") {
     if (str.charAt(0) === str.charAt(str.length - 1)) {
       return "Two's a pair.";
@@ -1296,6 +1295,15 @@ function flipEndChars(str) {
   } else if (str.length <= 1 || typeof str !== "string") {
     return "Incompatible.";
   }
+}
+
+///////////OPTION 2/////////
+///**** Like this ways bc it shows 1) can do index of string (i.e. string[0]) like an array, and you can "concat" ternary statments - so it makes it else ifs
+
+function flipEndChars(str) {
+	return typeof str != "string"  || str.length < 2 ? "Incompatible." : 
+         str[0] == str[str.length - 1] ? "Two's a pair." : 
+         str[str.length - 1] + str.slice(1,str.length - 1) + str[0] ;
 }
 
 console.log(flipEndChars("Cat, dog, and mouse."));
