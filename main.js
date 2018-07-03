@@ -1186,35 +1186,70 @@
 
 // EXERCISE 39
 
-// Capitalize the Names
-// Create a function that takes an array of names and returns an array with the first letter capitalized.
-// Examples
-// ["mavis", "senaida", "letty"] ➞ ["Mavis", "Senaida", "Letty"]
+// // Capitalize the Names
+// // Create a function that takes an array of names and returns an array with the first letter capitalized.
+// // Examples
+// // ["mavis", "senaida", "letty"] ➞ ["Mavis", "Senaida", "Letty"]
 
-// ["samuel", "MABELLE", "letitia", "meridith"] ➞ ["Samuel", "Mabelle", "Letitia", "Meridith"]
+// // ["samuel", "MABELLE", "letitia", "meridith"] ➞ ["Samuel", "Mabelle", "Letitia", "Meridith"]
 
-// ["Slyvia", "Kristal", "Sharilyn", "Calista"] ➞ ["Slyvia", "Kristal", "Sharilyn", "Calista"]
-// Notes
-// Don't change the order of the original array.
-// Notice in the second example above, "MABELLE" is returned as "Mabelle".
+// // ["Slyvia", "Kristal", "Sharilyn", "Calista"] ➞ ["Slyvia", "Kristal", "Sharilyn", "Calista"]
+// // Notes
+// // Don't change the order of the original array.
+// // Notice in the second example above, "MABELLE" is returned as "Mabelle".
 
-// // ***********SOLUTION*****************
+// // // ***********SOLUTION*****************
+
+// // *****OPTION 1*********
 
 // function capMe(arr) {
 // 	return arr.map(word => word.charAt(0).toUpperCase() + word.substring(1, word.length).toLowerCase())
 // }
 
-function capMe(arr) {
-  let capArr = [];
-  arr.forEach(word => {
-    capArr.push(
-      word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase()
-    );
-  });
-  return capArr;
+// // ******OPTION 2**********
+
+// function capMe(arr) {
+//   let capArr = [];
+//   arr.forEach(word => {
+//     capArr.push(
+//       word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase()
+//     );
+//   });
+//   return capArr;
+// }
+
+// console.log(capMe(["mavis", "senaida", "letty"]));
+// console.log(capMe(["samuel", "MABELLE", "letitia", "meridith"]));
+
+// ********************************************************************************
+
+// EXERCISE 40
+
+// Maskify the String
+// Usually when you sign up for an account to buy something, your credit card number, phone number or answer to a secret question is partially obscured in some way. Since someone could look over your shoulder, you don't want that shown on your screen. Hence, the website masks these strings.
+// Your task is to create a function that takes a string, transforms all but the last four characters into "#" and returns the new masked string.
+// Examples
+// "4556364607935616" ➞ "############5616"
+
+// "64607935616" ➞ "#######5616"
+
+// "1" ➞ "1"
+
+// "" ➞ ""
+// Notes
+// The maskify function must accept a string of any length.
+// An empty string should return an empty string (fourth example above).
+
+// // ***********SOLUTION*****************
+
+function maskify(str) {
+  if (str.length <= 4) {
+    return str;
+  } else return str.substring(0, str.length-4).replace(/[^ ]/g, "#") + str.substring(str.length - 4)
 }
 
-console.log(capMe(["mavis", "senaida", "letty"]));
-console.log(capMe(["samuel", "MABELLE", "letitia", "meridith"]));
+console.log(maskify("4556364607935616"));
+console.log(maskify("1"));
+console.log(maskify("12asdfasdf45234"));
 
 // ********************************************************************************
